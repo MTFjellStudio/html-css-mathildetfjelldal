@@ -193,11 +193,13 @@ header {
 
 .icon-link {
     font-size: 1.25rem;
+    color: var(--color-white);
     text-decoration: none;
     transition: transform var(--transition-fast);
 }
 
 .icon-link:hover {
+    color: var(--color-primary);
     transform: scale(1.1);
 }
 

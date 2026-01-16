@@ -27,8 +27,7 @@
                 </ul>
             </nav>
             <div class="country-select">
-                <label for="country-select" class="sr-only">Country</label>
-                <select id="country-select" name="country">
+                <select id="country-select" name="country" aria-label="country-select">
                     <option value="">Country</option>
                     <option value="norway">Norway</option>
                     <option value="denmark">Denmark</option>
@@ -49,10 +48,6 @@
                 <img src="images/rainy-days-logo/rainy-days-logo.png" alt="Rainy Days Logo">
             </a>
 
-            <!-- Mobile Hamburger Toggle -->
-            <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
-            <label for="menu-toggle" class="menu-toggle-label" aria-label="Toggle navigation menu">☰</label>
-
             <!-- Main Navigation -->
             <nav class="main-nav" aria-label="Main navigation">
                 <ul class="nav-list">
@@ -62,13 +57,26 @@
                 </ul>
             </nav>
 
-            <!-- Header Icons (Search, Cart, Wishlist, etc.) -->
+            <!-- Header Icons + Mobile Hamburger -->
             <div class="header-icons">
                 <a href="#search" aria-label="Search" class="icon-link">🔍</a>
-                <a href="cart.html" aria-label="Shopping cart" class="icon-link">🛒</a>
                 <a href="#wishlist" aria-label="Wishlist" class="icon-link">❤️</a>
+                <a href="#share" aria-label="Share" class="icon-link">🔗</a>
+                
+                <!-- Mobile Hamburger Toggle (part of icons row) -->
+                <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+                <label for="menu-toggle" class="menu-toggle-label icon-link" aria-label="Toggle navigation menu">☰</label>
             </div>
         </div>
+
+        <!-- Mobile Navigation Dropdown -->
+        <nav class="main-nav-mobile" aria-label="Mobile navigation">
+            <ul class="nav-list">
+                <li><a href="products-women.html">Women</a></li>
+                <li><a href="products-men.html">Men</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main id="main">

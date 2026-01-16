@@ -56,15 +56,15 @@
 .country-select img {
     height: 20px;
     width: auto;
-    border-radius: var(--radius-sm);
+    --radius-none: 0px;
 }
 
 #country-select {
-    background: transparent;
-    color: var(--color-white);
+    background: var(--color-white);
+    color: var(--color-text);
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: var(--space-xs) var(--space-sm);
-    border-radius: var(--radius-sm);
+    --radius-none: 0px;
     font-family: var(--font-body);
     font-size: var(--font-size-sm);
     cursor: pointer;
@@ -119,17 +119,24 @@ header {
     display: none;
 }
 
-/* Hamburger icon label */
+/* Hamburger icon label - styled as icon */
 .menu-toggle-label {
     display: block;
     font-size: 1.5rem;
     cursor: pointer;
-    padding: var(--space-sm);
-    margin: calc(var(--space-sm) * -1);  /* Expand clickable area */
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    transition: transform var(--transition-fast);
 }
 
-/* Main navigation (hidden by default on mobile) */
-.main-nav {
+.menu-toggle-label:hover {
+    transform: scale(1.1);
+}
+
+/* Mobile navigation dropdown - full width below header */
+.main-nav-mobile {
     display: none;
     position: absolute;
     top: 100%;
@@ -139,11 +146,17 @@ header {
     border-bottom: 1px solid var(--color-border);
     padding: var(--space-md) var(--margin-page);
     z-index: 50;
+    width: 100%;
 }
 
-/* Show navigation when hamburger is checked */
-.menu-toggle-checkbox:checked ~ .main-nav {
+/* Show mobile nav when hamburger is checked */
+.menu-toggle-checkbox:checked ~ .main-nav-mobile {
     display: block;
+}
+
+/* Desktop nav - hidden on mobile, shown on desktop */
+.main-nav {
+    display: none;
 }
 
 /* Mobile navigation list */
@@ -193,7 +206,7 @@ header {
    DESKTOP LAYOUT (900px+)
    ======================================== */
 
-@media (min-width: 900px) {
+@media (min-width: 700px) {
     /* Show topbar on desktop */
     .topbar {
         display: flex;
@@ -223,7 +236,12 @@ header {
         display: none;
     }
 
-    /* Show navigation as horizontal menu on desktop */
+    /* Hide mobile nav dropdown on desktop */
+    .main-nav-mobile {
+        display: none !important;
+    }
+
+    /* Show desktop navigation as horizontal menu on desktop */
     .main-nav {
         display: flex !important;
         position: static;
@@ -231,6 +249,7 @@ header {
         border: none;
         padding: 0;
         gap: var(--gutter-mobile);
+        flex: 1;
     }
 
     .nav-list {
@@ -240,11 +259,6 @@ header {
 
     .nav-list a {
         font-size: var(--font-size-md);
-    }
-
-    /* Grow nav to fill space, push icons to right */
-    .main-nav {
-        flex: 1;
     }
 
     .header-icons {

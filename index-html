@@ -14,34 +14,59 @@
     <link rel="stylesheet" href="css/overrides.css">
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a> <!-- Hide, but access with Tab toggle -->
+    <a class="skip-link" href="#main">Skip to content</a>
+    
+    <!-- TOP BAR: Desktop-only (Login, Blog, Support, Country) -->
+    <div class="topbar">
+        <div class="topbar-inner">
+            <nav class="top-nav">
+                <ul>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </nav>
+            <div class="country-select">
+                <label for="country-select" class="sr-only">Country</label>
+                <select id="country-select" name="country">
+                    <option value="">Country</option>
+                    <option value="norway">Norway</option>
+                    <option value="denmark">Denmark</option>
+                    <option value="sweden">Sweden</option>
+                    <option value="england">England</option>
+                    <option value="germany">Germany</option>
+                </select>
+                <img src="images/stock-photos/pixabay-flag-norway.png" alt="Norway flag">
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER: Logo, Navigation, Icons -->
     <header>
-        <div class="topbar">
-            <div class="container">
-                <div class="topbar-inner">
-                    <nav class="top-nav">
-                        <ul>
-                            <li><a href="about.html">Sign In</a></li>
-                            <li><a href="about.html">Sign Up</a></li>
-                            <li><a href="about.html">Blog</a></li>
-                            <li><a href="about.html">Support</a></li>
-                        </ul>
-                    </nav>
-                    <div class="country-select">
-                        <div class="toolbar-country-select">
-                            <label for="sort" class="sr-only">Country</label>
-                            <select id="sort" name="sort">
-                                <option value="">Country</option>
-                                <option value="popular">Norway</option>
-                                <option value="price-asc">Denmark</option>
-                                <option value="price-desc">Sweden</option>
-                                <option value="price-desc">England</option>
-                                <option value="price-desc">Germany</option>
-                            </select>
-                        </div>
-                        <img src="images/stock-photos/pixabay-flag-norway.png" alt="Norway flag">
-                    </div>
-                </div>
+        <div class="header-inner">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <img src="images/rainy-days-logo/rainy-days-logo.png" alt="Rainy Days Logo">
+            </a>
+
+            <!-- Mobile Hamburger Toggle -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+            <label for="menu-toggle" class="menu-toggle-label" aria-label="Toggle navigation menu">☰</label>
+
+            <!-- Main Navigation -->
+            <nav class="main-nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="products-women.html">Women</a></li>
+                    <li><a href="products-men.html">Men</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+
+            <!-- Header Icons (Search, Cart, Wishlist, etc.) -->
+            <div class="header-icons">
+                <a href="#search" aria-label="Search" class="icon-link">🔍</a>
+                <a href="cart.html" aria-label="Shopping cart" class="icon-link">🛒</a>
+                <a href="#wishlist" aria-label="Wishlist" class="icon-link">❤️</a>
             </div>
         </div>
     </header>

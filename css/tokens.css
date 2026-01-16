@@ -1,52 +1,167 @@
-/* tokens.css */
-/* ==== FONT IMPORTS ==== */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;500;700&display=swap");
-
 /* =======================================
    RAINY DAYS DESIGN TOKENS
    ======================================= */
 
-:root {
-  /* Colours */
-  --color-bg: #f5f5f3;              /* page background */
-  --color-bg-muted: #7b8d7b;        /* sage green */
-  --color-primary: #9e6129;         /* orange button */
-  --color-primary-dark: #191919;    /* dark grey/black */
-  --color-secondary-accent: #0a3641;/* dark teal */
-  --color-text: #191919;            /* body text */
-  --color-heading: #191919;         /* headings (fix for missing token) */
-  --color-white: #f5f5f3;           /* off-white */
+/* ==== FONT IMPORTS ==== */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;500;700&display=swap");
 
-  /* Typography */
+:root {
+  /* ========================================
+     COLORS
+     ======================================== */
+  
+  /* Neutral Colors */
+  --color-white: #f5f5f3;           /* Off-white: page background, light surfaces */
+  --color-text: #191919;            /* Dark gray/black: body text */
+  --color-heading: #191919;         /* Dark gray/black: headings */
+  
+  /* Brand Colors */
+  --color-primary: #9e6129;         /* Warm orange: buttons, CTAs */
+  --color-primary-dark: #191919;    /* Dark gray: topbar background */
+  --color-secondary: #7b8d7b;       /* Sage green: accents, muted backgrounds, header, footer, buttons, dropdowns */
+  --color-secondary-accent: #0a3641;/* Dark teal: secondary accents */
+  
+  /* Background Colors */
+  --color-bg: #f5f5f3;              /* Main page background */
+  --color-bg-muted: #7b8d7b;        /* Muted/secondary backgrounds */
+  
+  /* Semantic Colors */
+  --color-border: #d0d0d0;          /* Light borders, dividers */
+  --color-error: #d32f2f;           /* Error states */
+  --color-success: #388e3c;         /* Success states */
+
+
+  /* ========================================
+     TYPOGRAPHY
+     ======================================== */
+  
+  /* Font Families */
   --font-heading: "Montserrat", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
+  
+  /* Font Sizes (Mobile-First) */
+  --font-size-base: 16px;           /* 1rem = 16px */
+  --font-size-xs: 0.75rem;          /* 12px: small labels, captions */
+  --font-size-sm: 0.875rem;         /* 14px: small text, topbar */
+  --font-size-md: 1rem;             /* 16px: body text, buttons */
+  --font-size-lg: 1.125rem;         /* 18px: large body text */
+  
+  --font-size-h1: 2rem;             /* 32px: mobile h1 */
+  --font-size-h2: 1.5rem;           /* 24px: mobile h2 */
+  --font-size-h3: 1.25rem;          /* 20px: mobile h3 */
+  --font-size-h4: 1.125rem;         /* 18px: mobile h4 */
+  
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+  --font-weight-heading: 700;
+  
+  /* Line Heights */
+  --line-height-tight: 1.2;         /* Headings */
+  --line-height-base: 1.5;          /* Body text */
+  --line-height-loose: 1.8;         /* Large text blocks */
+  
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.05em;
 
-  --font-size-base: 16px;
-  --font-size-h1: 3rem;               /* 48px desktop*/ 
-  --font-size-h2: 2rem;               /* 32px desktop*/
-  --font-size-button: 1rem;          /* 16px */ 
 
-  --line-height-base: 1.5;
-  --line-height-heading: 1.2;
+  /* ========================================
+     SPACING (8px Base Scale)
+     ======================================== */
+  /* 
+     Reasoning: 8px base creates harmony across design
+     4px: Tiny gaps (icon spacing, tight padding)
+     8px: Small (button padding, minor gaps)
+     16px: Standard (card padding, section gaps)
+     24px: Medium (content spacing)
+     32px: Large (major section spacing)
+     48px: Extra large (hero spacing, major breaks)
+     64px: Jumbo (page-level spacing)
+  */
+  
+  --space-xs: 4px;       /* 0.25rem */
+  --space-sm: 8px;       /* 0.5rem */
+  --space-md: 16px;      /* 1rem */
+  --space-lg: 24px;      /* 1.5rem */
+  --space-xl: 32px;      /* 2rem */
+  --space-2xl: 48px;     /* 3rem */
+  --space-3xl: 64px;     /* 4rem */
 
-  /* Spacing – 8px-ish scale (expanded) */
-  --space-xs: 4px;
-  --space-s: 8px;
-  --space-m: 16px;
-  --space-l: 24px;
-  --space-xl: 40px;
-  --space-2xl: 48px;                /* added to complete intended scale */
 
-  /* Borders / Radius */
-  --radius-pill: 0px;               /* square buttons */
-  --radius-card: 0px;
+  /* ========================================
+     BORDER & RADIUS
+     ======================================== */
+  
+  --radius-none: 0px;               /* Square corners (buttons, cards) */
+  --radius-sm: 4px;                 /* Subtle rounding */
+  --radius-md: 8px;                 /* Medium rounding */
+  --radius-lg: 16px;                /* Large rounding */
+  --radius-full: 9999px;            /* Pill shape (badges, avatars) */
+  
+  --border-width: 1px;
+  --border-color: #d0d0d0;
 
-  --border-card: 0px solid #7a8a6a;
+
+  /* ========================================
+     SHADOWS
+     ======================================== */
+  
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.25);
+
+
+  /* ========================================
+     SIZING (Common widths & heights)
+     ======================================== */
+  
+  --size-container-max: 1200px;     /* Max width for content */
+  --size-sidebar-width: 280px;
+  --size-topbar-height: 48px;
+
+  /* ========================================
+     LAYOUT MARGINS & GUTTERS (Mobile-First)
+     ======================================== */
+  /* 
+     Margins: Space between edge of viewport and content
+     Gutters: Space between columns/items inside content
+  */
+  
+  --margin-page: 16px;              /* Mobile: page margin */
+  --gutter-mobile: 10px;            /* Mobile: space between items */
+
+
+  /* ========================================
+     TRANSITIONS & ANIMATIONS
+     ======================================== */
+  
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
 }
+
+/* ========================================
+   DESKTOP ADJUSTMENTS (900px+)
+   ======================================== */
 
 @media (min-width: 900px) {
   :root {
-    --font-size-h1: 3rem;  /* desktop */
-    --font-size-h2: 2rem;
+    /* Scale up typography on desktop */
+    --font-size-h1: 3rem;           /* 48px */
+    --font-size-h2: 2rem;           /* 32px */
+    --font-size-h3: 1.5rem;         /* 24px */
+    
+    /* Increase spacing for larger screens */
+    --space-xl: 40px;               /* 2.5rem */
+    --space-2xl: 64px;              /* 4rem */
+    --space-3xl: 80px;              /* 5rem */
+    
+    /* Desktop margins & gutters */
+    --margin-page: 80px;            /* Desktop: page margin */
+    --gutter-mobile: 20px;          /* Desktop: space between items */
   }
 }

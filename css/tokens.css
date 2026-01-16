@@ -1,0 +1,52 @@
+/* tokens.css */
+/* ==== FONT IMPORTS ==== */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;500;700&display=swap");
+
+/* =======================================
+   RAINY DAYS DESIGN TOKENS
+   ======================================= */
+
+:root {
+  /* Colours */
+  --color-bg: #f5f5f3;              /* page background */
+  --color-bg-muted: #7b8d7b;        /* sage green */
+  --color-primary: #9e6129;         /* orange button */
+  --color-primary-dark: #191919;    /* dark grey/black */
+  --color-secondary-accent: #0a3641;/* dark teal */
+  --color-text: #191919;            /* body text */
+  --color-heading: #191919;         /* headings (fix for missing token) */
+  --color-white: #f5f5f3;           /* off-white */
+
+  /* Typography */
+  --font-heading: "Montserrat", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  --font-size-base: 16px;
+  --font-size-h1: 3rem;               /* 48px desktop*/ 
+  --font-size-h2: 2rem;               /* 32px desktop*/
+  --font-size-button: 1rem;          /* 16px */ 
+
+  --line-height-base: 1.5;
+  --line-height-heading: 1.2;
+
+  /* Spacing – 8px-ish scale (expanded) */
+  --space-xs: 4px;
+  --space-s: 8px;
+  --space-m: 16px;
+  --space-l: 24px;
+  --space-xl: 40px;
+  --space-2xl: 48px;                /* added to complete intended scale */
+
+  /* Borders / Radius */
+  --radius-pill: 0px;               /* square buttons */
+  --radius-card: 0px;
+
+  --border-card: 0px solid #7a8a6a;
+}
+
+@media (min-width: 900px) {
+  :root {
+    --font-size-h1: 3rem;  /* desktop */
+    --font-size-h2: 2rem;
+  }
+}

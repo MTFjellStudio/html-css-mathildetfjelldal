@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Rainy Days</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="RainyDays-Pushing-the-comfort-zone." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/rainy-days-logo/favicon.ico">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/overrides.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a> <!-- Hide, but access with Tab toggle -->
+    <header>
+        <div class="topbar">
+            <div class="container">
+                <div class="topbar-inner">
+                    <nav class="top-nav">
+                        <ul>
+                            <li><a href="about.html">Sign In</a></li>
+                            <li><a href="about.html">Sign Up</a></li>
+                            <li><a href="about.html">Blog</a></li>
+                            <li><a href="about.html">Support</a></li>
+                        </ul>
+                    </nav>
+                    <div class="country-select">
+                        <div class="toolbar-country-select">
+                            <label for="sort" class="sr-only">Country</label>
+                            <select id="sort" name="sort">
+                                <option value="">Country</option>
+                                <option value="popular">Norway</option>
+                                <option value="price-asc">Denmark</option>
+                                <option value="price-desc">Sweden</option>
+                                <option value="price-desc">England</option>
+                                <option value="price-desc">Germany</option>
+                            </select>
+                        </div>
+                        <img src="images/stock-photos/pixabay-flag-norway.png" alt="Norway flag">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+    </main>
+
+    <footer>
+    </footer>
+  </body>
+</html>

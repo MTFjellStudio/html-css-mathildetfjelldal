@@ -103,7 +103,7 @@
 
             <!-- Main Navigation -->
         </div>
-        <nav class="bottom-inner">
+        <nav class="footer-nav">
             <ul>
                 <li><a href="login.html">Company</a></li>
                 <li><a href="support.html">Support</a></li>
@@ -114,26 +114,28 @@
         </nav>
     </footer>
 
-        <div class="bottom-bar">
-            <nav class="bottom-inner">
-                <ul>
-                    <li><a href="All Rights Reserved">All Rights Reserved</a></li>
-                    <li><a href="Terms of Sale">Terms of Sale</a></li>
-                    <li><a href="Privacy Policy">Privacy Policy</a></li>
-                    <li><a href="Responsible Supply Chain Statement">Responsible Supply Chain Statement</a></li>
-                    <li><a href="Cookie Preferences">Cookie Preferences</a></li>
-                </ul>
-            </nav>
-            <div class="country-select">
-                <select id="country-select" name="country" aria-label="country-select">
-                    <option value="">Country</option>
-                    <option value="norway">Norway</option>
-                    <option value="denmark">Denmark</option>
-                    <option value="sweden">Sweden</option>
-                    <option value="england">England</option>
-                    <option value="germany">Germany</option>
-                </select>
-                <img src="images/stock-photos/pixabay-flag-norway.png" alt="Norway flag">
+        <div class="bottombar">
+            <div class="bottombar-inner">
+                <nav class="bottom-nav">
+                    <ul>
+                        <li><a href="All Rights Reserved">All Rights Reserved</a></li>
+                        <li><a href="Terms of Sale">Terms of Sale</a></li>
+                        <li><a href="Privacy Policy">Privacy Policy</a></li>
+                        <li><a href="Responsible Supply Chain Statement">Responsible Supply Chain Statement</a></li>
+                        <li><a href="Cookie Preferences">Cookie Preferences</a></li>
+                    </ul>
+                </nav>
+                <div class="country-select">
+                    <select id="country-select" name="country" aria-label="country-select">
+                        <option value="">Country</option>
+                        <option value="norway">Norway</option>
+                        <option value="denmark">Denmark</option>
+                        <option value="sweden">Sweden</option>
+                        <option value="england">England</option>
+                        <option value="germany">Germany</option>
+                    </select>
+                    <img src="images/stock-photos/pixabay-flag-norway.png" alt="Norway flag">
+                </div>
             </div>
         </div>
   </body>

@@ -90,19 +90,37 @@
     </header>
 
     <main id="main">
+
+        <section class="hero">
+            
+        </section>
+        <section class="Featured-categories">
+            <!-- Section divided into 3 parts on desktop, unclear on mobile. Text with slogan to the left, image button for Men in the middle and Women to the right. -->
+        </section>
+        <section class="New-and-best-categories">
+            <!-- Only 2 image-buttons here, for New arrivals and bestseller. I am considering adding the product tiles into this category as well as the featured-categories to maybe make it easier to change into the mobile layout. Should I start with mobile layout first? -->
+        </section>
+        <section class="Featured-products">  <!-- This section is mobile only, and therefore only shows the mobile variant of the tiles. But desktop version could be enabled, although it does not aign witht he figma design? -->
+            <article class="product-card">
+                <a href="product-detail.html">
+                    <img src="images/rainy-days-jacket2/rainy-days-jacket2-black.png" alt="Product Image">
+                </a>
+                <div class="Card-info">
+                    <h2>RainyPro Jacket</h2>
+                    <p class="Price">1999 NOK</p>
+                </div>
+            </article>
+        </section>
+                    
     </main>
 
     <footer>
     <!-- MAIN HEADER: Logo, Navigation, Icons -->
 
         <div class="footer-inner">
-            <!-- Logo bottom centered-->
-            <a href="index.html" class="logo">
-                <img src="images/rainy-days-logo/rainy-days-logo.png" alt="Rainy Days Logo">
-            </a>
-
-            <!-- Main Navigation -->
+           <div class="Newsletter-signup"
         </div>
+        <!-- Main Navigation -->
         <nav class="footer-nav">
             <ul>
                 <li><a href="login.html">Company</a></li>
@@ -112,6 +130,10 @@
                 <li><a href="Shipping and Delivery">Shipping and Delivery</a></li>
             </ul>
         </nav>
+            <!-- Logo bottom centered-->
+            <a href="index.html" class="logo">
+                <img src="images/rainy-days-logo/rainy-days-logo.png" alt="Rainy Days Logo">
+            </a>
     </footer>
 
         <div class="bottombar">

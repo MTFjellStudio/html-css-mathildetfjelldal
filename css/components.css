@@ -1,0 +1,36 @@
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+
+
+   /* ========================================
+    PRODUCT CARDS
+   ======================================== */
+
+.product-card {
+    /* Stack them vertically */
+    background-color: var(--color-tertiary);
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Space between image and text */
+}
+
+.product-card img {
+    width: 100%;  /* Fill the space you are given */
+    height: auto; /* Keep original proportions */
+    aspect-ratio: 4 / 5; /* OPTIONAL: Forces all images to be the same height */
+    object-fit: cover;   /* Crops the image to fit the ratio */
+    border-radius: 0; /* SQUARE EDGES */
+}
+
+.card-info h2 {
+    font-size: 1rem; /* Base size */
+    margin: 0;
+    font-weight: 600;
+}
+
+.card-info p {
+    margin: 0;
+    color: var(--color-primary); /* Orange price */
+}

@@ -102,12 +102,18 @@
         </section>
         <section class="Featured-products">  <!-- This section is mobile only, and therefore only shows the mobile variant of the tiles. But desktop version could be enabled, although it does not aign witht he figma design? -->
             <article class="product-card">
-                <a href="product-detail.html">
-                    <img src="images/rainy-days-jacket2/rainy-days-jacket2-black.png" alt="Product Image">
-                </a>
-                <div class="Card-info">
-                    <h2>RainyPro Jacket</h2>
-                    <p class="Price">1999 NOK</p>
+                <div class="card-media">
+                    <a href="product-detail.html">
+                        <img src="images/rainy-days-jacket2/rainy-days-jacket2-black.png" alt="RainyPro Jacket">
+                    </a>
+                </div>
+                <div class="card-info">
+                    <div class="card-title">
+                        <h2>RainyPro Jacket</h2>
+                    </div>
+                    <div class="card-price-rating">
+                        <p class="price">1999 NOK</p>
+                    </div>
                 </div>
             </article>
         </section>

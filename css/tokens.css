@@ -12,7 +12,8 @@
   
   /* Neutral Colors */
   --color-white: #f5f5f3;           /* Off-white: page background, light surfaces */
-  --color-text: #191919;            /* Dark gray/black: body text */
+  --color-text-dark: #191919;            /* Dark gray/black: body text */
+  --color-text-light: #f5f5f3;           /* Off-white: light text */
   --color-heading: #191919;         /* Dark gray/black: headings */
   
   /* Brand Colors */

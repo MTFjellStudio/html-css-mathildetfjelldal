@@ -113,6 +113,14 @@
                     </div>
                     <div class="card-price-rating">
                         <p class="price">1999 NOK</p>
+
+                        <div class="product-rating" aria-label="Rated 4 out of 5 stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i> <span class="rating-count">(128)</span> 
+                        </div>
                     </div>
                 </div>
             </article>

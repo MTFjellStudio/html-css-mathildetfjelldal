@@ -55,10 +55,11 @@
     font-family: var(--font-body);
 }
 
-.card-price-rating .Price { /* Note: Capital 'P' to match your HTML */
+.card-price-rating .price { /* Note: Capital 'P' to match your HTML */
     font-size: 1rem;
     font-weight: 500;
     margin: 0;
-    color: var(--color-text);
+    color: var(--color-white);
     background-color: var(--color-bg-muted);
 }
+

@@ -221,6 +221,7 @@ footer {
     align-items: center;
     gap: var(--space-md);
     padding: 0 var(--margin-page);
+    justify-content: space-between;
 }
 
 .footer-nav {
@@ -296,6 +297,34 @@ footer {
 }
 
 
+/* ========================================
+   PRODUCT GRID LAYOUT
+   ======================================== */
+
+.product-grid {
+    display: grid;
+    /* STEP 1: TINY SCREENS (Safety Mode) */
+    /* If screen is super skinny (<350px), force 1 column so text fits */
+    grid-template-columns: 1fr; 
+    gap: var(--space-md); 
+    margin-bottom: var(--space-3xl);
+}
+
+/* STEP 2: STANDARD MOBILE (350px+) */
+@media (min-width: 350px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* The standard 2-col view */
+    }
+}
+
+/* STEP 3: DESKTOP LUXURY (900px+) */
+@media (min-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr); /* Switch to 3 columns */
+        gap: var(--space-lg); /* Bigger gaps */
+    }
+}
+
 
 /* ========================================
    DESKTOP LAYOUT (900px+)
@@ -349,7 +378,7 @@ footer {
 
     .nav-list {
         flex-direction: row;
-        gap: var(--gutter-mobile);
+        gap: var(--gutter-mobile); 
     }
 
     .nav-list a {
@@ -375,4 +404,36 @@ footer {
     }
 }
 
+/* ========================================
+   DESKTOP CARD LAYOUT (900px+)
+   ======================================== */
+@media (min-width: 900px) {
+    
+    /* 1. More Breathing Room */
+    .card-media {
+        padding: 32px 32px 0 32px; /* Double the padding! Big Luxury feel. */
+    }
 
+    .card-title, 
+    .card-footer {
+        padding: 16px; /* More padding in text areas */
+    }
+
+    /* 2. Bigger Text */
+    .card-title h3 {
+        font-size: 1.1rem; /* Larger title */
+    }
+
+    .card-footer .price {
+        font-size: 1.25rem; /* Larger price */
+    }
+}
+
+/* DESKTOP GRID LAYOUT (900px+) */
+@media (min-width: 900px) {
+    .product-grid {
+        /* DESKTOP: 3 Columns */
+        grid-template-columns: repeat(3, 1fr); 
+        gap: var(--space-lg); /* Larger gap */
+    }
+}

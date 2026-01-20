@@ -2,6 +2,32 @@
    BUTTONS
    ======================================== */
 
+/* Orange Wide Button */
+/* Orange Narrow Button */
+/* Orange Pay Now XL Desktop */
+/* Green Information Button / Dropdown wth + sign */
+/* Chevron Button Right / All buttons, show on hover? */
+/* Filter button / */
+/* Sort button / dropdown */
+
+   /* SUBSCRIBE BUTTON FOOTER TEMP - Considering how to use chevron as button instead. */
+    .btn-subscribe {
+    background-color: var(--color-primary); /* Orange */
+    color: var(--color-white);
+    border: none;
+    padding: 12px 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+    
+    /* SQUARE EDGES */
+    border-radius: 0;
+}
+
+.btn-subscribe:hover {
+    background-color: #8a5322; /* Slightly darker orange */
+}
 
 
 /* ========================================
@@ -12,23 +38,35 @@
     display: flex;
     flex-direction: column;
     gap: 12px; /* Space between the Green Frame and the Text */
-    width: 100%;
 }
 
 /* 1. GREEN FRAME */
 .card-media {
-    background-color: var(--color-tertiary); /* Sage green */
+    background-color: var(--color-tertiary); 
     
-    /* "Frame" effect around the image? */
-    padding: 16px; 
+    /* PADDING: 
+       16px on Top, Left, Right. 
+       0px on Bottom. Fix top being way too wide. Why? */
+    padding: 16px 16px 0 16px; 
     
-    /* Layout */
     display: flex;
     justify-content: center;
-    align-items: center;
     
-    /* Force it to be a rectangle */
-    aspect-ratio: 4 / 5; 
+    /* ALIGNMENT: Pushes the image to the bottom line */
+    align-items: flex-end; 
+    
+    /* ASPECT RATIO: 
+       Figma Mobile: 185/336 = 0.55
+       Figma Desktop: 413/604 = 0.68
+       Compromise: aspect-ratio: 2 / 3 (0.66) looks great on both. This rplaces the earlier aspect ratio of 4/5.
+    */
+    aspect-ratio: 2 / 3; 
+}
+
+.product-card-link{
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 /* 2. THE IMAGE INSIDE */
@@ -63,3 +101,96 @@
     background-color: var(--color-bg-muted);
 }
 
+
+
+/* ========================================
+   NEWSLETTER COMPONENT
+   ======================================== */
+
+.footer-newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 400px; /* Prevents it from getting too wide on tablets */
+}
+
+/* Headings */
+.newsletter-header h3 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+}
+
+.newsletter-header p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* Form Layout */
+.newsletter-form .form-group {
+    display: flex;
+    flex-direction: column; /* Mobile: Stack input and button */
+    gap: 10px;
+}
+
+/* The Input Field */
+.newsletter-form input {
+    width: 100%;
+    padding: 12px 16px;
+    
+    /* STYLE: Transparent with White Border */
+    background: transparent;
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+    
+    font-family: var(--font-body);
+    font-size: 1rem;
+    
+    /* SQUARE EDGES */
+    border-radius: 0;
+}
+
+/* Placeholder text color */
+.newsletter-form input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* Legal Text */
+.legal-text {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.legal-text a {
+    color: var(--color-white);
+    text-decoration: underline;
+}
+
+
+/* ========================================
+   DESKTOP ADJUSTMENTS (900px+) Move to Layout
+   ======================================== */
+@media (min-width: 900px) {
+    
+    /* Switch to side-by-side layout */
+    .newsletter-form .form-group {
+        flex-direction: row; 
+        gap: 0; /* Removes gap so they touch */
+    }
+
+    /* Make the input take available space */
+    .newsletter-form input {
+        border-right: none; /* Remove right border where they touch */
+        flex: 1;
+    }
+
+    /* Button sits attached to the input */
+    .btn-subscribe {
+        flex-shrink: 0; /* Don't let the button shrink */
+    }
+}

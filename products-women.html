@@ -91,46 +91,167 @@
 
     <main id="main">
 
-        <section class="hero">
+        <div class="container">
             
-        </section>
-        <section class="Featured-categories">
-            <!-- Section divided into 3 parts on desktop, unclear on mobile. Text with slogan to the left, image button for Men in the middle and Women to the right. -->
-        </section>
-        <section class="New-and-best-categories">
-            <!-- Only 2 image-buttons here, for New arrivals and bestseller. I am considering adding the product tiles into this category as well as the featured-categories to maybe make it easier to change into the mobile layout. Should I start with mobile layout first? -->
-        </section>
-        <section class="Featured-products">  <!-- This section is mobile only, and therefore only shows the mobile variant of the tiles. But desktop version could be enabled, although it does not aign witht he figma design? -->
-            <article class="product-card">
-                <a class="product-card-link" href="product-detail.html" aria-label="View RainyPro Jacket">
+            <div class="page-header">
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a> / <span>Jackets for Women</span>
+                </div>
+                
+                <h2>Jackets for Women</h2>
+                <p class="product-count">6 items</p>
+
+                <div class="toolbar">
+                    <button class="tool-btn">
+                        FILTER <i class="fa-solid fa-bars-staggered"></i>
+                    </button>
+                    <button class="tool-btn">
+                        SORTING <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+
+            <section class="product-grid">
+
+                <article class="product-card">
                     <div class="card-media">
-                        <a href="product-detail.html">
-                            <img src="images/rainy-days-jacket2/rainy-days-jacket2-black.png" alt="RainyPro Jacket">
+                        <a href="product-specific.html">
+                            <img src="images/rainy-days-jacket2/rainy-days-jacket2-black.png" alt="RainyPro Waterproof Jacket Black">
                         </a>
                     </div>
-                    <div class="card-info">
-                        <div class="card-title">
-                            <h2>RainyPro Jacket</h2>
-                        </div>
-                        <div class="card-price-rating">
-                            <p class="price">1999 NOK</p>
-
-                            <div class="product-rating" aria-label="Rated 4 out of 5 stars">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-regular fa-star"></i> <span class="rating-count">(128)</span> 
-                            </div>
+                    <div class="card-title">
+                        <h3>RainyPro Waterproof Jacket - Black</h3>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price">999 NOK</span>
+                        <div class="rating" aria-label="Rated 5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span class="count">(128)</span>
                         </div>
                     </div>
-                </a>
-            </article>
-        </section>
-                    
+                </article>
+
+                <article class="product-card">
+                    <div class="card-media">
+                        <a href="product-specific.html">
+                            <img src="images/rainy-days-jacket2/rainy-days-jacket2-green-inmotion.png" alt="RainyPro Waterproof Jacket Green">
+                        </a>
+                    </div>
+                    <div class="card-title">
+                        <h3>RainyPro Waterproof Jacket - Green</h3>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price">999 NOK</span>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span class="count">(128)</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="card-media">
+                        <a href="product-specific.html">
+                            <img src="images/rainy-days-jacket7/rainy-days-jacket7-women-inmotion.png" alt="Trailfleece Jacket Green">
+                        </a>
+                    </div>
+                    <div class="card-title">
+                        <h3>Trailfleece Jacket - Green</h3>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price">999 NOK</span>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span class="count">(84)</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="card-media">
+                        <a href="product-specific.html">
+                            <img src="images/rainy-days-jacket4/rainy-days-jacket4-women-inmotion.png" alt="Altitude Pro Jacket Black">
+                        </a>
+                    </div>
+                    <div class="card-title">
+                        <h3>Altitude Pro Jacket - Black</h3>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price">999 NOK</span>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span class="count">(128)</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="card-media">
+                        <a href="product-specific.html">
+                            <img src="images/rainy-days-jacket3/rainy-days-jacket3-women-v1.png" alt="TrailShell Jacket Red">
+                        </a>
+                    </div>
+                    <div class="card-title">
+                        <h3>TrailShell Jacket - Red</h3>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price">999 NOK</span>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span class="count">(128)</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="card-media">
+                        <a href="product-specific.html">
+                            <img src="images/rainy-days-jacket5/rainy-days-jacket5-women.png" alt="Nomad Shell Jacket Grey">
+                        </a>
+                    </div>
+                    <div class="card-title">
+                        <h3>Nomad Shell Jacket - Grey</h3>
+                    </div>
+                    <div class="card-footer">
+                        <span class="price">999 NOK</span>
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span class="count">(128)</span>
+                        </div>
+                    </div>
+                </article>
+
+            </section>
+
+        </div>
+
     </main>
 
-    <footer>
+       <footer>
     <!-- MAIN HEADER: Logo, Navigation, Icons -->
 
         <div class="footer-inner">

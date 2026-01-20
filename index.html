@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Rainy Days</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="utf-8" />
+    <meta name="description" content="RainyDays-Pushing-the-comfort-zone." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/rainy-days-logo/favicon.ico">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/overrides.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    
+    <!-- TOP BAR: Desktop-only (Login, Blog, Support, Country) -->
+    <div class="topbar">
+        <div class="topbar-inner">
+            <nav class="top-nav">
+                <ul>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </nav>
+            <div class="country-select">
+                <select id="country-select" name="country" aria-label="country-select">
+                    <option value="">Country</option>
+                    <option value="norway">Norway</option>
+                    <option value="denmark">Denmark</option>
+                    <option value="sweden">Sweden</option>
+                    <option value="england">England</option>
+                    <option value="germany">Germany</option>
+                </select>
+                <img src="images/stock-photos/pixabay-flag-norway.png" alt="Norway flag">
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER: Logo, Navigation, Icons -->
+    <header>
+        <div class="header-inner">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <img src="images/rainy-days-logo/rainy-days-logo.png" alt="Rainy Days Logo">
+            </a>
+
+            <!-- Main Navigation -->
+            <nav class="main-nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="products-women.html">Women</a></li>
+                    <li><a href="products-men.html">Men</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+
+            <!-- Header Icons + Mobile Hamburger -->
+            <div class="header-icons">
+                <a href="#search" aria-label="Search" class="icon-link">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+                <a href="#wishlist" aria-label="Wishlist" class="icon-link">
+                    <i class="fa-solid fa-heart"></i>
+                </a>
+                <a href="#share" aria-label="Share" class="icon-link">
+                    <i class="fa-solid fa-share-nodes"></i>
+                </a>
+                <a href="#cart" aria-label="Cart" class="icon-link">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+                
+                <!-- Mobile Hamburger Toggle (part of icons row) -->
+                <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+                <label for="menu-toggle" class="menu-toggle-label icon-link" aria-label="Toggle navigation menu">☰</label>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Dropdown -->
+        <nav class="main-nav-mobile" aria-label="Mobile navigation">
+            <ul class="nav-list">
+                <li><a href="products-women.html">Women</a></li>
+                <li><a href="products-men.html">Men</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+
+        <section class="hero">
+            
+        </section>
+        <section class="Featured-categories">
+            <!-- Section divided into 3 parts on desktop, unclear on mobile. Text with slogan to the left, image button for Men in the middle and Women to the right. -->
+        </section>
+        <section class="New-and-best-categories">
+            <!-- Only 2 image-buttons here, for New arrivals and bestseller. I am considering adding the product tiles into this category as well as the featured-categories to maybe make it easier to change into the mobile layout. Should I start with mobile layout first? -->
+        </section>
+        <section class="Featured-products">  <!-- This section is mobile only, and therefore only shows the mobile variant of the tiles. But desktop version could be enabled, although it does not aign witht he figma design? -->
+            <article class="product-card">
+                <a class="product-card-link" href="product-specific.html" aria-label="View RainyPro Jacket">
+                    <div class="card-media">
+                        <a href="product-specific.html">
+                            <img src="images/rainy-days-jacket2/rainy-days-jacket2-black.png" alt="RainyPro Jacket">
+                        </a>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title">
+                            <h2>RainyPro Jacket</h2>
+                        </div>
+                        <div class="card-price-rating">
+                            <p class="price">1999 NOK</p>
+
+                            <div class="product-rating" aria-label="Rated 4 out of 5 stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i> <span class="rating-count">(128)</span> 
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </article>
+        </section>
+                    
+    </main>
+
+    <footer>
+    <!-- MAIN HEADER: Logo, Navigation, Icons -->
+
+        <div class="footer-inner">
+           <div class="Newsletter-signup">
+                <div class="newsletter-header">
+                    <h3>Be the first to get the news!</h3>
+                    <p>Hear about new arrivals and sales.</p>
+                </div>
+                
+                <form action="#" class="newsletter-form">
+                    <label for="newsletter-email" class="sr-only">Email address</label>
+                    
+                    <div class="form-group">
+                        <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn-subscribe">Subscribe</button>
+                    </div>
+                </form>
+                
+                <p class="legal-text">
+                    By joining you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.
+                </p>
+           </div>
+        </div>
+        <!-- Main Navigation -->
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="login.html">Company</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="FAQ">FAQ</a></li>
+                <li><a href="Returns">Returns</a></li>
+                <li><a href="Shipping and Delivery">Shipping and Delivery</a></li>
+            </ul>
+        </nav>
+            <!-- Logo bottom centered-->
+            <a href="index.html" class="logo">
+                <img src="images/rainy-days-logo/rainy-days-logo.png" alt="Rainy Days Logo">
+            </a>
+    </footer>
+
+        <div class="bottombar">
+            <div class="bottombar-inner">
+                <nav class="bottom-nav">
+                    <ul>
+                        <li><a href="All Rights Reserved">All Rights Reserved</a></li>
+                        <li><a href="Terms of Sale">Terms of Sale</a></li>
+                        <li><a href="Privacy Policy">Privacy Policy</a></li>
+                        <li><a href="Responsible Supply Chain Statement">Responsible Supply Chain Statement</a></li>
+                        <li><a href="Cookie Preferences">Cookie Preferences</a></li>
+                    </ul>
+                </nav>
+                <div class="country-select">
+                    <select id="country-select" name="country" aria-label="country-select">
+                        <option value="">Country</option>
+                        <option value="norway">Norway</option>
+                        <option value="denmark">Denmark</option>
+                        <option value="sweden">Sweden</option>
+                        <option value="england">England</option>
+                        <option value="germany">Germany</option>
+                    </select>
+                    <img src="images/stock-photos/pixabay-flag-norway.png" alt="Norway flag">
+                </div>
+            </div>
+        </div>
+  </body>
+</html>

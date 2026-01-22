@@ -253,6 +253,18 @@ header {
     display: block;
 }
 
+/* Price Tag (Mobile Only? Consider price tag in bottom right corner on desktop, or even same placement on desktop as mobile.) */
+.hero-price-tag {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: var(--color-secondary); /* Sage green. Check if darker color needed.--color-tertiary? */
+    color: var(--color-white);
+    padding: 16px 16px;
+    font-weight: bold;
+    z-index: 2;
+}
+
 /* ========================================
    FOOTER
    ======================================== */

@@ -298,6 +298,95 @@ footer {
 
 
 /* ========================================
+   DESKTOP DROPDOWN MENU
+   ======================================== */
+
+.dropdown-item { /* Make the arrow smaller and more readable */
+    position: relative; /* Anchors the dropdown to this item. Container for ech dropdown element. */
+    height: 100%; /* This is to ensure full height alignment. Doesn't seem to help? Testing this with the new orange hover effect that wouldnt work before.  */
+}
+
+/* The Link Styling. Aligning neatly. */
+.dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between text "Women" and the arrow icon. Consider more for longer buttons. Or more padding. */
+    
+    /* Button Style */
+    background-color: var(--color-white); /* Off-white background */
+    color: var(--color-text-dark);             /* Black text */
+    padding: 16px 16px;                   /* Give it size/clickable area */
+    text-decoration: none;
+    transition: all 0.5s ease;            /* Smooth transition for color swap */
+    border-radius: 0; /* Square edges */
+}
+
+.dropdown-trigger i { /* Icon */
+    font-size: 0.75rem; /* Make the arrow tiny and elegant */
+    transition: transform 0.3s ease;
+}
+
+.dropdown-item:hover .dropdown-trigger {
+    background-color: var(--color-primary); /* Turns Orange */
+    color: var(--color-white);              /* Turns White */
+}
+
+/* Rotate arrow on hover */
+.dropdown-item:hover .dropdown-trigger i {
+    transform: rotate(180deg);
+}
+
+/* The Dropdown Box */
+.dropdown-menu {
+    display: none; /* Hidden by deafault */
+    
+    position: absolute; /* Float it */
+    top: 100%; /* Push it exactly below the parent */
+    left: 0;
+    
+    min-width: 200px; /* Make it wide enough for content */
+    background-color: var(--color-white); /* White background */
+    padding: 10px 0; /* Vertical padding */
+    
+    /* Decoration */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 100; /* Ensure it sits on top of hero images */
+    
+    /* Layout of items inside */
+    flex-direction: column; 
+    gap: 0;
+    list-style: none;
+}
+
+/* Show on Hover */
+.dropdown-item:hover .dropdown-menu {
+    display: flex; /* This shows the dropdown menu */
+}
+
+/* Styling the Links Inside */
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px; /* Comfortable click area */
+    color: var(--color-text-dark);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+/* Hover effect on the dropdown items */
+.dropdown-menu a:hover {
+    background-color: var(--color-primary); /* Orange background on hover */
+    color: var(--color-text-light);
+    transition: background-color 0.4s ease, color 0.4s ease; /* Tried to add a moother transition, but cant really tell.  */
+    /* Alternative solution: Opacity & visibility; Instead of snapping into existence, the menu fades in. A bit convoluted though? Wait for JS? */
+}
+
+
+/* ========================================
    PRODUCT GRID LAYOUT
    ======================================== */
 

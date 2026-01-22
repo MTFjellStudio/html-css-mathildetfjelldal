@@ -228,7 +228,7 @@ header {
 }
 
 .hero-content h1 {
-    font-size: 1.2rem;
+    font-size: var(--font-size-lg);
     text-transform: uppercase;
     margin: 0;
     font-weight: 700;
@@ -263,6 +263,69 @@ header {
     padding: 16px 16px;
     font-weight: bold;
     z-index: 2;
+}
+
+@media (min-width: 900px) {
+    
+    .hero-banner {
+        /* DESKTOP LAYOUT: CSS Grid Stacking. This is to make the text and button stay on top of the image in desktop view.*/
+        display: grid;
+        /* create 1 single cell */
+        grid-template-columns: 1fr; /*(1 Fraction): Creating one single column that stretches to fill the whole width.*/
+        grid-template-rows: 600px; /* Fixed height for desktop. One single row that is exactly 600 pixels tall. */
+        overflow: hidden; /* Crop anything spilling out */
+    }
+
+    /* --- THE IMAGE (Fills the whole grid) --- */
+    .hero-media {
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+        aspect-ratio: auto; /* Reset aspect ratio */
+    }
+
+    .hero-price-tag {
+        display: none; /* Hide price on desktop */
+    }
+
+    /* --- THE TEXT (Overlays the grid) 
+    This tells both the Image and the Text to "Go to Column 1 and Row 1."
+    Since the Image goes there...
+    And the Text goes there...
+    They stack on top of each other. --- */
+    .hero-content {
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+        
+        /* Reset Orange Bar styles */
+        background-color: transparent;
+        order: 0; /* Reset order */
+        text-align: left;
+        
+        /* Positioning logic */
+        align-self: center; /* Vertical Center */
+        justify-self: start; /* Horizontal Left */
+        padding-left: 10%;
+        
+        /* Shadow for readability */
+        text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        text-transform: none;
+    }
+
+    /* Show the elements we hid on mobile */
+    .hero-content p,
+    .hero-content .btn {
+        display: block;
+    }
+    
+    .hero-content p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
 }
 
 /* ========================================

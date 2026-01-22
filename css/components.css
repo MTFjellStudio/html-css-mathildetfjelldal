@@ -3,6 +3,19 @@
    ======================================== */
 
 /* Orange Wide Button */
+.btn {
+    background-color: var(--color-primary); /* Orange */
+    color: var(--color-white);
+    border: none;
+    padding: 12px 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    
+    /* SQUARE EDGES */
+    border-radius: 0;
+}
+
+
 /* Orange Narrow Button */
 /* Orange Pay Now XL Desktop */
 /* Green Information Button / Dropdown wth + sign */

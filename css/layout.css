@@ -203,6 +203,56 @@ header {
     transform: scale(1.1);
 }
 
+
+/* ========================================
+   HERO SECTION (Semantic HTML Version)
+   ======================================== */
+
+.hero-banner {
+    /* MOBILE LAYOUT: Flex Column */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* --- 1. THE TEXT (Mobile: orange AUTUMN COLLECTION on top.) Hide other text on mobile, make image clickable. --- */
+.hero-content {
+    /* Order -1 moves it visually to the top on Mobile */
+    order: -1; 
+    
+    background-color: var(--color-primary); /* Orange bar Unsure if this can be treated as orange button or if it should have a separate layout. */
+    color: var(--color-text-light);
+    padding: var(--space-md);
+    text-align: left;
+    z-index: 2; /* Ensure text sits on top as a"button". */
+}
+
+.hero-content h1 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* Hide the subtitles and button on Mobile to match the fimga layout. */
+.hero-content p,
+.hero-content .btn {
+    display: none; 
+}
+
+/* --- 2. THE IMAGE (Mobile: Tall Portrait) --- */
+.hero-media {
+    position: relative; /* For the price tag */
+    width: 100%;
+}
+
+.hero-media img { /* This is to make sure the image scales with the screen width. */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills space without stretching */
+    display: block;
+}
+
 /* ========================================
    FOOTER
    ======================================== */

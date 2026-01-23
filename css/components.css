@@ -1,4 +1,95 @@
 /* ========================================
+   COMPONENTS.CSS
+   Reusable UI patterns (buttons, cards, dropdowns, newsletter)
+   Mobile-first, with local breakpoints
+   ======================================== */
+
+
+/* ========================================
+   DESKTOP DROPDOWN MENU 
+   (Wrapped in desktop breakpoint so it won’t interfere on mobile)
+   ======================================== */
+/*Consider making breakpoint 600 or 700? The Image for mobile becomes too blurry nd there is space on the header for desktop menu at smaller width.*/
+@media (min-width: 900px) {
+
+  .dropdown-item {
+      position: relative;
+      height: 100%;
+  }
+
+  .dropdown-trigger {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      background-color: var(--color-white);
+      color: var(--color-text-dark);
+      padding: 16px 16px;
+      text-decoration: none;
+      transition: all 0.5s ease;
+      border-radius: 0;
+  }
+
+  .dropdown-trigger i {
+      font-size: 0.75rem;
+      transition: transform 0.3s ease;
+  }
+
+  .dropdown-item:hover .dropdown-trigger {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+  }
+
+  .dropdown-item:hover .dropdown-trigger i {
+      transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+      display: none;
+
+      position: absolute;
+      top: 100%;
+      left: 0;
+
+      min-width: 200px;
+      background-color: var(--color-white);
+      padding: 10px 0;
+
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 100;
+
+      flex-direction: column;
+      gap: 0;
+      list-style: none;
+  }
+
+  .dropdown-item:hover .dropdown-menu {
+      display: flex;
+  }
+
+  .dropdown-menu li {
+      width: 100%;
+  }
+
+  .dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      color: var(--color-text-dark);
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: background 0.2s;
+  }
+
+  .dropdown-menu a:hover {
+      background-color: var(--color-primary);
+      color: var(--color-text-light);
+      transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+}
+
+
+/* ========================================
    BUTTONS
    ======================================== */
 
@@ -50,16 +141,21 @@
 .product-card {
     display: flex;
     flex-direction: column;
-    gap: 12px; /* Space between the Green Frame and the Text */
+    gap: 12px;
+    
+    /* To ensure the card itself acts as a hover trigger */
+    cursor: pointer;
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Keeps text color normal */
 }
 
 /* 1. GREEN FRAME */
 .card-media {
-    background-color: var(--color-tertiary); 
+    background-color: var(--color-secondary); 
     
     /* PADDING: 
        16px on Top, Left, Right. 
-       0px on Bottom. Fix top being way too wide. Why? */
+       0px on Bottom. Fix top being way too wide. */
     padding: 16px 16px 0 16px; 
     
     display: flex;
@@ -76,10 +172,11 @@
     aspect-ratio: 2 / 3; 
 }
 
-.product-card-link{
-  display: block;
-  text-decoration: none;
-  color: inherit;
+.product-card-link {
+    display: block; /* Ensures the link fills the card */
+    text-decoration: none;
+    color: inherit;
+    height: 100%; /* Ensures uniform height if I use flexbox on parent */
 }
 
 /* 2. THE IMAGE INSIDE */
@@ -114,6 +211,32 @@
     background-color: var(--color-bg-muted);
 }
 
+
+/* Desktop override for card (moved from layout.css + fixed selector compatibility) */
+@media (min-width: 900px) {
+
+    .card-media {
+        padding: 32px 32px 0 32px;
+    }
+
+    .card-title, 
+    .card-footer {
+        padding: 16px;
+    }
+
+    /* FIX: your card uses h2 right now; this supports either h2 or h3 */
+    .card-title h2,
+    .card-title h3 {
+        font-size: 1.1rem;
+    }
+
+    /* FIX: support both possible price containers */
+    .card-footer .price,
+    .card-price-rating .price {
+        font-size: 1.25rem;
+    }
+
+}
 
 
 /* ========================================
@@ -186,7 +309,7 @@
 
 
 /* ========================================
-   DESKTOP ADJUSTMENTS (900px+) Move to Layout
+   DESKTOP ADJUSTMENTS (900px+)
    ======================================== */
 @media (min-width: 900px) {
     

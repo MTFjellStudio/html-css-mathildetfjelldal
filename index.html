@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/overrides.css">
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main">Skip to content</a> 
     
     <!-- TOP BAR: Desktop-only (Login, Blog, Support, Country) -->
     <div class="topbar">
@@ -145,38 +145,60 @@
             </div>
 
         </section>
-        <section class="Featured-categories">
+        <section class="shop-categories">
             <!-- Section divided into 3 parts on desktop, unclear on mobile. Text with slogan to the left, image button for Men in the middle and Women to the right. -->
+            <div class="category-slogan">
+                <h2>Functional comfort, inspired by nature.</h2>
+                <p>Reliable rainwear designed for movement, balance, and life outdoors.</p>
+            </div>
+            <a href="products-men.html" class="category-card" aria-label="Shop Men">
+                <img src="images/rainy-days-jacket1/rainy-days-jacket1-v2.png" alt="" class="card-bg">
+                <span class="card-label">Men</span>
+            </a>
+            <a href="products-women.html" class="category-card" aria-label="Shop Women">
+                <img src="images/rainy-days-jacket6/rainy-days-jacket6-women-inmotion.png" alt="" class="card-bg">
+                <span class="card-label">Women</span>
         </section>
-        <section class="New-and-best-categories">
+        <section class="shop-promos">
             <!-- Only 2 image-buttons here, for New arrivals and bestseller. I am considering adding the product tiles into this category as well as the featured-categories to maybe make it easier to change into the mobile layout. Should I start with mobile layout first? -->
-        </section>
-        <section class="Featured-products">  <!-- This section is mobile only, and therefore only shows the mobile variant of the tiles. But desktop version could be enabled, although it does not aign witht he figma design? -->
-            <article class="product-card">
-                <a class="product-card-link" href="product-specific.html" aria-label="View RainyPro Jacket">
-                    <div class="card-media">
-                        <a href="product-specific.html">
-                            <img src="images/rainy-days-jacket2/rainy-days-jacket2-black.png" alt="RainyPro Jacket">
-                        </a>
-                    </div>
-                    <div class="card-info">
-                        <div class="card-title">
-                            <h2>RainyPro Jacket</h2>
-                        </div>
-                        <div class="card-price-rating">
-                            <p class="price">999 NOK</p>
+            <a href="products-bestsellers.html" class="category-card" aria-label="Shop Bestsellers">
+                <img src="images/rainy-days-jacket4/rainy-days-jacket4-men-inmotion.png" alt="" class="card-bg">
+                <span class="card-label">Bestsellers</span>
+            </a>
 
-                            <div class="product-rating" aria-label="Rated 4 out of 5 stars">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-regular fa-star"></i> <span class="rating-count">(128)</span> 
+            <a href="products-new.html" class="category-card" aria-label="Shop New Arrivals">
+                <img src="images/rainy-days-jacket5/rainy-days-jacket5-inmotion.png" alt="" class="card-bg">
+                <span class="card-label">New Arrivals</span>
+            </a>
+        </section>
+        <section class="featured-products">
+            <div class="product-grid">
+                <article class="product-card">
+                    <a class="product-card-link" href="product-specific.html" aria-label="View RainyPro Jacket">
+                        
+                        <div class="card-media">
+                            <img src="images/rainy-days-jacket2/rainy-days-jacket2-black.png" alt="RainyPro Jacket">
+                        </div>
+                        
+                        <div class="card-info">
+                            <div class="card-title">
+                                <h2>RainyPro Jacket</h2>
+                            </div>
+                            <div class="card-price-rating">
+                                <p class="price">999 NOK</p>
+                                <div class="product-rating" aria-label="Rated 4 out of 5 stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i> 
+                                    <span class="rating-count">(128)</span> 
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-            </article>
+                    </a>
+                </article>
+            </div>
         </section>
                     
     </main>

@@ -80,6 +80,23 @@
     color: var(--color-white);
 }
 
+/* --- DESKTOP TOPBAR OVERRIDES (900px+) --- */
+@media (min-width: 900px) {
+    /* Show topbar on desktop */
+    .topbar {
+        display: flex;
+    }
+
+    .topbar-inner {
+        gap: var(--gutter-mobile);
+        padding: 0 var(--margin-page);
+    }
+
+    .top-nav ul {
+        gap: var(--gutter-mobile);
+    }
+}
+
 
 /* ========================================
    MAIN HEADER (Logo, Nav, Icons)
@@ -111,7 +128,47 @@ header {
 }
 
 /* ========================================
-   MOBILE HAMBURGER MENU
+   HEADER ICONS
+   ======================================== */
+
+.header-icons {
+    display: flex;
+    gap: var(--space-md);
+    align-items: center;
+}
+
+.icon-link {
+    font-size: 1rem;
+    color: var(--color-white);
+    text-decoration: none;
+    transition: transform var(--transition-fast);
+}
+
+.icon-link:hover {
+    color: var(--color-primary);
+    transform: scale(1.1);
+}
+
+/* --- DESKTOP HEADER OVERRIDES (900px+) --- */
+@media (min-width: 900px) {
+    /* Adjust header spacing on desktop */
+    .header-inner {
+        padding: var(--space-lg) var(--margin-page);
+        gap: var(--space-lg);
+    }
+
+    .logo img {
+        height: 50px;
+    }
+    
+    .header-icons {
+        gap: var(--space-lg);
+    }
+}
+
+
+/* ========================================
+   NAVIGATION (Mobile Hamburger & Main Nav)
    ======================================== */
 
 /* Hidden checkbox that controls menu state */
@@ -181,26 +238,37 @@ header {
     color: var(--color-primary);
 }
 
-/* ========================================
-   HEADER ICONS
-   ======================================== */
+/* --- DESKTOP NAVIGATION OVERRIDES (900px+) --- */
+@media (min-width: 900px) {
+    /* Hide hamburger on desktop */
+    .menu-toggle-label {
+        display: none;
+    }
 
-.header-icons {
-    display: flex;
-    gap: var(--space-md);
-    align-items: center;
-}
+    /* Hide mobile nav dropdown on desktop */
+    .main-nav-mobile {
+        display: none !important;
+    }
 
-.icon-link {
-    font-size: 1rem;
-    color: var(--color-white);
-    text-decoration: none;
-    transition: transform var(--transition-fast);
-}
+    /* Show desktop navigation as horizontal menu on desktop */
+    .main-nav {
+        display: flex !important;
+        position: static;
+        background: none;
+        border: none;
+        padding: 0;
+        gap: var(--gutter-mobile);
+        flex: 1;
+    }
 
-.icon-link:hover {
-    color: var(--color-primary);
-    transform: scale(1.1);
+    .nav-list {
+        flex-direction: row;
+        gap: var(--gutter-mobile); 
+    }
+
+    .nav-list a {
+        font-size: var(--font-size-md);
+    }
 }
 
 
@@ -265,6 +333,7 @@ header {
     z-index: 2;
 }
 
+/* --- DESKTOP HERO OVERRIDES (900px+) --- */
 @media (min-width: 900px) {
     
     .hero-banner {
@@ -328,6 +397,7 @@ header {
     }
 }
 
+
 /* ========================================
    FOOTER
    ======================================== */
@@ -377,6 +447,7 @@ footer {
     flex-wrap: wrap;
 }
 
+
 /* ========================================
    BOTTOMBAR
    ======================================== */
@@ -421,188 +492,8 @@ footer {
     opacity: 0.8;
 }
 
-
-/* ========================================
-   DESKTOP DROPDOWN MENU
-   ======================================== */
-
-.dropdown-item { /* Make the arrow smaller and more readable */
-    position: relative; /* Anchors the dropdown to this item. Container for ech dropdown element. */
-    height: 100%; /* This is to ensure full height alignment. Doesn't seem to help? Testing this with the new orange hover effect that wouldnt work before.  */
-}
-
-/* The Link Styling. Aligning neatly. */
-.dropdown-trigger {
-    display: flex;
-    align-items: center;
-    gap: 8px; /* Space between text "Women" and the arrow icon. Consider more for longer buttons. Or more padding. */
-    
-    /* Button Style */
-    background-color: var(--color-white); /* Off-white background */
-    color: var(--color-text-dark);             /* Black text */
-    padding: 16px 16px;                   /* Give it size/clickable area */
-    text-decoration: none;
-    transition: all 0.5s ease;            /* Smooth transition for color swap */
-    border-radius: 0; /* Square edges */
-}
-
-.dropdown-trigger i { /* Icon */
-    font-size: 0.75rem; /* Make the arrow tiny and elegant */
-    transition: transform 0.3s ease;
-}
-
-.dropdown-item:hover .dropdown-trigger {
-    background-color: var(--color-primary); /* Turns Orange */
-    color: var(--color-white);              /* Turns White */
-}
-
-/* Rotate arrow on hover */
-.dropdown-item:hover .dropdown-trigger i {
-    transform: rotate(180deg);
-}
-
-/* The Dropdown Box */
-.dropdown-menu {
-    display: none; /* Hidden by deafault */
-    
-    position: absolute; /* Float it */
-    top: 100%; /* Push it exactly below the parent */
-    left: 0;
-    
-    min-width: 200px; /* Make it wide enough for content */
-    background-color: var(--color-white); /* White background */
-    padding: 10px 0; /* Vertical padding */
-    
-    /* Decoration */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    z-index: 100; /* Ensure it sits on top of hero images */
-    
-    /* Layout of items inside */
-    flex-direction: column; 
-    gap: 0;
-    list-style: none;
-}
-
-/* Show on Hover */
-.dropdown-item:hover .dropdown-menu {
-    display: flex; /* This shows the dropdown menu */
-}
-
-/* Styling the Links Inside */
-.dropdown-menu li {
-    width: 100%;
-}
-
-.dropdown-menu a {
-    display: block;
-    padding: 10px 20px; /* Comfortable click area */
-    color: var(--color-text-dark);
-    font-size: 0.9rem;
-    text-decoration: none;
-    transition: background 0.2s;
-}
-
-/* Hover effect on the dropdown items */
-.dropdown-menu a:hover {
-    background-color: var(--color-primary); /* Orange background on hover */
-    color: var(--color-text-light);
-    transition: background-color 0.4s ease, color 0.4s ease; /* Tried to add a moother transition, but cant really tell.  */
-    /* Alternative solution: Opacity & visibility; Instead of snapping into existence, the menu fades in. A bit convoluted though? Wait for JS? */
-}
-
-
-/* ========================================
-   PRODUCT GRID LAYOUT
-   ======================================== */
-
-.product-grid {
-    display: grid;
-    /* STEP 1: TINY SCREENS (Safety Mode) */
-    /* If screen is super skinny (<350px), force 1 column so text fits */
-    grid-template-columns: 1fr; 
-    gap: var(--space-md); 
-    margin-bottom: var(--space-3xl);
-}
-
-/* STEP 2: STANDARD MOBILE (350px+) */
-@media (min-width: 350px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr); /* The standard 2-col view */
-    }
-}
-
-/* STEP 3: DESKTOP LUXURY (900px+) */
+/* --- DESKTOP BOTTOMBAR OVERRIDES (900px+) --- */
 @media (min-width: 900px) {
-    .product-grid {
-        grid-template-columns: repeat(3, 1fr); /* Switch to 3 columns */
-        gap: var(--space-lg); /* Bigger gaps */
-    }
-}
-
-
-/* ========================================
-   DESKTOP LAYOUT (900px+)
-   ======================================== */
-
-@media (min-width: 900px) {
-    /* Show topbar on desktop */
-    .topbar {
-        display: flex;
-    }
-
-    .topbar-inner {
-        gap: var(--gutter-mobile);
-        padding: 0 var(--margin-page);
-    }
-
-    .top-nav ul {
-        gap: var(--gutter-mobile);
-    }
-
-    /* Adjust header spacing on desktop */
-    .header-inner {
-        padding: var(--space-lg) var(--margin-page);
-        gap: var(--space-lg);
-    }
-
-    .logo img {
-        height: 50px;
-    }
-
-    /* Hide hamburger on desktop */
-    .menu-toggle-label {
-        display: none;
-    }
-
-    /* Hide mobile nav dropdown on desktop */
-    .main-nav-mobile {
-        display: none !important;
-    }
-
-    /* Show desktop navigation as horizontal menu on desktop */
-    .main-nav {
-        display: flex !important;
-        position: static;
-        background: none;
-        border: none;
-        padding: 0;
-        gap: var(--gutter-mobile);
-        flex: 1;
-    }
-
-    .nav-list {
-        flex-direction: row;
-        gap: var(--gutter-mobile); 
-    }
-
-    .nav-list a {
-        font-size: var(--font-size-md);
-    }
-
-    .header-icons {
-        gap: var(--space-lg);
-    }
-
     /* Show bottom-bar on desktop */
     .bottombar {
         display: flex;
@@ -618,36 +509,34 @@ footer {
     }
 }
 
+
 /* ========================================
-   DESKTOP CARD LAYOUT (900px+)
+   PRODUCT GRID LAYOUT
    ======================================== */
-@media (min-width: 900px) {
-    
-    /* 1. More Breathing Room */
-    .card-media {
-        padding: 32px 32px 0 32px; /* Double the padding! Big Luxury feel. */
-    }
 
-    .card-title, 
-    .card-footer {
-        padding: 16px; /* More padding in text areas */
-    }
+.product-grid {
+    display: grid;
+    /* STEP 1: TINY SCREENS (Safety Mode) */
+    /* If screen is super skinny (<350px), force 1 column so text fits */
+    grid-template-columns: 1fr; 
+    gap: var(--space-md); 
+    margin-bottom: var(--space-3xl);
+    margin: 16px;
+}
 
-    /* 2. Bigger Text */
-    .card-title h3 {
-        font-size: 1.1rem; /* Larger title */
-    }
-
-    .card-footer .price {
-        font-size: 1.25rem; /* Larger price */
+/* STEP 2: STANDARD MOBILE (350px+) */
+@media (min-width: 350px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* The standard 2-col view */
+        margin: 20px;
     }
 }
 
-/* DESKTOP GRID LAYOUT (900px+) */
+/* STEP 3: DESKTOP LUXURY (900px+) */
 @media (min-width: 900px) {
     .product-grid {
-        /* DESKTOP: 3 Columns */
-        grid-template-columns: repeat(3, 1fr); 
-        gap: var(--space-lg); /* Larger gap */
+        grid-template-columns: repeat(3, 1fr); /* Switch to 3 columns */
+        gap: var(--space-lg); /* Bigger gaps */
+        margin: 80px;
     }
 }

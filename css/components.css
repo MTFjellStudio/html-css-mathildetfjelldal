@@ -178,16 +178,13 @@
     
     display: flex;
     justify-content: center;
+    align-items: flex-end; /* ALIGNMENT: Pushes the image to the bottom line */
+    overflow: hidden; /* CutS off any part of the image that spills out */
     
-    /* ALIGNMENT: Pushes the image to the bottom line */
-    align-items: flex-end; 
-    
-    /* ASPECT RATIO: 
-       Figma Mobile: 185/336 = 0.55
-       Figma Desktop: 413/604 = 0.68
-       Compromise: aspect-ratio: 2 / 3 (0.66) looks great on both. This rplaces the earlier aspect ratio of 4/5.
-    */
-    aspect-ratio: 2 / 3; 
+    /* Forces every single frame to have the exact same shape.
+       3/4 is a standard portrait ratio. I will consider changing to 2/3 again maybe. */
+    aspect-ratio: 3 / 4;
+    width: 100%;
 }
 
 /* Orange frame on hover effect */
@@ -204,11 +201,10 @@
 
 /* 2. THE IMAGE INSIDE. I need to give it a crop of some kind. */
 .card-media img {
+    display: block; /* Forces the image to fill the container completely */
     width: 100%;
     height: 100%;
-    
-    /* CRITICAL: Ensure the image scales down inside the frame without cropping! Have to check if the margin can be switched, or switch to desktop variant. */
-    object-fit: contain; 
+    object-fit: contain; /* Ensures the image scales down inside the frame without cropping! Have to check if the margin can be switched, or switch to desktop variant. */
 }
 
 /* 3. THE TEXT */
@@ -362,4 +358,3 @@
     }
 
 
-    

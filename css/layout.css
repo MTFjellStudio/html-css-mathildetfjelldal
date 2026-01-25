@@ -631,3 +631,32 @@ footer {
 
     .gallery-main { overflow: visible; }
 }
+
+/* ========================================
+   CART PAGE LAYOUT
+   ======================================== */
+
+.cart-layout {
+    display: flex;
+    flex-direction: column; /* Mobile First: Stacked */
+    gap: var(--space-xl);
+}
+
+@media (min-width: 900px) {
+    .cart-layout {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.cart-tile {
+    display: flex;
+    gap: var(--space-md);
+    padding: var(--space-md) 0;
+}
+
+.cart-media img {
+    width: 100px; /* Thumbnail size. Change to more flexible size and add a minimum cap? */
+    aspect-ratio: 3/4;
+    object-fit: cover;
+}

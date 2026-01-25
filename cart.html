@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Rainy Days Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="utf-8" />
+    <meta name="description" content="RainyDays-Pushing-the-comfort-zone." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/rainy-days-logo/favicon.ico">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/overrides.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a> 
+    
+    <!-- TOP BAR: Desktop-only (Login, Blog, Support, Country) -->
+    <div class="topbar">
+        <div class="topbar-inner">
+            <nav class="top-nav">
+                <ul>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="support.html">Support</a></li>
+                </ul>
+            </nav>
+            <div class="country-select">
+                <select id="country-select" name="country" aria-label="country-select">
+                    <option value="">Country</option>
+                    <option value="norway">Norway</option>
+                    <option value="denmark">Denmark</option>
+                    <option value="sweden">Sweden</option>
+                    <option value="england">England</option>
+                    <option value="germany">Germany</option>
+                </select>
+                <img src="images/stock-photos/pixabay-flag-norway.png" alt="Norway flag">
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER: Logo, Navigation, Icons -->
+    <header>
+        <div class="header-inner">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <img src="images/rainy-days-logo/rainy-days-logo.png" alt="Rainy Days Logo">
+            </a>
+
+            <!-- Main Navigation -->
+            <nav class="main-nav" aria-label="Main navigation">    
+                <ul class="nav-list">
+        
+                    <li class="dropdown-item">
+                        <a href="products-women.html" class="dropdown-trigger" aria-label="Products Women">
+                            Women <i class="fa-solid fa-chevron-down"></i>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="products-women.html">All Jackets</a></li>
+                            <li><a href="products-women.html">Hiking</a></li>
+                            <li><a href="products-women.html">Activewear</a></li>
+                            <li><a href="products-women.html">Everyday</a></li>
+                            <li><a href="products-women.html">Skiing</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown-item">
+                        <a href="products-women.html" class="dropdown-trigger" aria-label="Products Men">
+                            Men <i class="fa-solid fa-chevron-down"></i>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="products-women.html">All Jackets</a></li>
+                            <li><a href="products-women.html">Hiking</a></li>
+                            <li><a href="products-women.html">Activewear</a></li>
+                            <li><a href="products-women.html">Everyday</a></li>
+                            <li><a href="products-women.html">Skiing</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="about.html" class="dropdown-trigger" aria-label="About">
+                            About <i class="fa-solid fa-chevron-down"></i>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html">Our Story</a></li>
+                            <li><a href="about.html">Sustainability</a></li>
+                            <li><a href="about.html">Contact Us</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Header Icons + Mobile Hamburger -->
+            <div class="header-icons">
+                <a href="#search" aria-label="Search" class="icon-link">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+                <a href="#wishlist" aria-label="Wishlist" class="icon-link">
+                    <i class="fa-solid fa-heart"></i>
+                </a>
+                <a href="#share" aria-label="Share" class="icon-link">
+                    <i class="fa-solid fa-share-nodes"></i>
+                </a>
+                <a href="#cart" aria-label="Cart" class="icon-link">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+                
+                <!-- Mobile Hamburger Toggle (part of icons row) -->
+                <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+                <label for="menu-toggle" class="menu-toggle-label icon-link" aria-label="Toggle navigation menu">☰</label>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Dropdown -->
+        <nav class="main-nav-mobile" aria-label="Mobile navigation">
+            <ul class="nav-list">
+                <li><a href="products-women.html">Women</a></li>
+                <li><a href="products-men.html">Men</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div class="container cart-container">
+
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> / <span>Your Cart</span>
+            </div>
+
+            <h2>Your Cart (1 Item)</h2>
+
+            <div class="cart-layout">
+
+                <section class="cart-list" aria-label="Cart Items">
+                    
+                    <article class="cart-tile">
+                        <div class="cart-media">
+                            <a href="product-specific.html">
+                                <img src="images/rainy-days-jacket2/rainy-days-jacket2-black.png" alt="RainyPro Waterproof Jacket - Black">
+                            </a>
+                        </div>
+
+                        <div class="cart-details">
+                            <h2><a href="product-specific.html">RainyPro Waterproof Jacket</a></h2>
+                            <p class="variant-info">Color: Black | Size: S</p>
+                            
+                            <div class="cart-controls">
+                                <div class="quantity-selector">
+                                    <button type="button" aria-label="Decrease quantity">-</button>
+                                    <input type="number" id="qty-1" name="quantity" value="1" min="1">
+                                    <button type="button" aria-label="Increase quantity">+</button>
+                                </div>
+                                <button type="button" class="btn-remove">Remove</button>
+                            </div>
+                        </div>
+
+                        <div class="cart-price">
+                            <span class="price">999 NOK</span>
+                        </div>
+                    </article>
+
+                </section>
+
+            <aside class="cart-summary">
+                <div class="summary-card">
+                    <h2>Order Summary</h2>
+                    
+                    <dl class="summary-rows">
+                        <div class="summary-row">
+                            <dt>Subtotal</dt>
+                            <dd>999 NOK</dd>
+                        </div>
+                        <div class="summary-row">
+                            <dt>Shipping</dt>
+                            <dd>99</dd>
+                        </div>
+                        <div class="summary-row total">
+                            <dt>Total</dt>
+                            <dd>1 098 NOK</dd>
+                        </div>
+                    </dl>
+
+                    <a href="checkout.html" class="btn">Go to Checkout</a>
+                    
+                    <div class="safe-checkout-icons">
+                        <i class="fa-solid fa-lock"></i> <span>Secure Checkout</span>
+                    </div>
+                </div>
+            </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+
+        <div class="footer-inner">
+           <div class="Newsletter-signup">
+                <div class="newsletter-header">
+                    <h3>Be the first to get the news!</h3>
+                    <p>Hear about new arrivals and sales.</p>
+                </div>
+                
+                <form action="#" class="newsletter-form">
+                    <label for="newsletter-email" class="sr-only">Email address</label>
+                    
+                    <div class="form-group">
+                        <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn-subscribe">Subscribe</button>
+                    </div>
+                </form>
+                
+                <p class="legal-text">
+                    By joining you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.
+                </p>
+           </div>
+        </div>
+        <!-- Main Navigation -->
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="login.html">Company</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="FAQ">FAQ</a></li>
+                <li><a href="Returns">Returns</a></li>
+                <li><a href="Shipping and Delivery">Shipping and Delivery</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <a href="#instagram" aria-label="Instagram" class="icon-link">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#facebook" aria-label="Facebook" class="icon-link">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="#google" aria-label="Google" class="icon-link">
+                <i class="fa-brands fa-google"></i>
+            </a>
+            <a href="#twitter" aria-label="Twitter" class="icon-link">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+        </div>
+
+            <!-- Logo bottom centered-->
+        <a href="index.html" class="logo">
+            <img src="images/rainy-days-logo/rainy-days-logo.png" alt="Rainy Days Logo">
+        </a>
+    </footer>
+
+        <div class="bottombar">
+            <div class="bottombar-inner">
+                <nav class="bottom-nav">
+                    <ul>
+                        <li><a href="All Rights Reserved">All Rights Reserved</a></li>
+                        <li><a href="Terms of Sale">Terms of Sale</a></li>
+                        <li><a href="Privacy Policy">Privacy Policy</a></li>
+                        <li><a href="Responsible Supply Chain Statement">Responsible Supply Chain Statement</a></li>
+                        <li><a href="Cookie Preferences">Cookie Preferences</a></li>
+                    </ul>
+                </nav>
+                <div class="country-select">
+                    <select id="country-select" name="country" aria-label="country-select">
+                        <option value="">Country</option>
+                        <option value="norway">Norway</option>
+                        <option value="denmark">Denmark</option>
+                        <option value="sweden">Sweden</option>
+                        <option value="england">England</option>
+                        <option value="germany">Germany</option>
+                    </select>
+                    <img src="images/stock-photos/pixabay-flag-norway.png" alt="Norway flag">
+                </div>
+            </div>
+        </div>
+  </body>
+</html>

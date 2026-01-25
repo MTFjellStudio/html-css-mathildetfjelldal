@@ -3,6 +3,28 @@
    ======================================= */
 
 /* ========================================
+   UNIVERSAL CONTAINER FOR MAIN CONTENT
+   ======================================== */
+
+.container {
+    margin: 0 16px; /* Default: 16px left/right margins */
+}
+
+/* Mobile variant (350px+) */
+@media (min-width: 350px) {
+    .container {
+        margin: 0 20px; /* 20px left/right margins */
+    }
+}
+
+/* Desktop variant (900px+) */
+@media (min-width: 900px) {
+    .container {
+        margin: 0 80px; /* 80px left/right margins */
+    }
+}
+
+/* ========================================
    TOPBAR (Desktop-Only: Login, Blog, Support, Country)
    ======================================== */
 
@@ -521,14 +543,14 @@ footer {
     grid-template-columns: 1fr; 
     gap: var(--space-md); 
     margin-bottom: var(--space-3xl);
-    margin: 16px;
+    /* Removed margin: 16px; */
 }
 
 /* STEP 2: STANDARD MOBILE (350px+) */
 @media (min-width: 350px) {
     .product-grid {
         grid-template-columns: repeat(2, 1fr); /* The standard 2-col view */
-        margin: 20px;
+        /* Removed margin: 20px; */
     }
 }
 
@@ -537,7 +559,7 @@ footer {
     .product-grid {
         grid-template-columns: repeat(3, 1fr); /* Switch to 3 columns */
         gap: var(--space-lg); /* Bigger gaps */
-        margin: 80px;
+        /* Removed margin: 80px; */
     }
 }
 

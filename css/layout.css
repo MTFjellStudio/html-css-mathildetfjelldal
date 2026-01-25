@@ -540,3 +540,94 @@ footer {
         margin: 80px;
     }
 }
+
+
+/* ========================================
+   PRODUCT-SPECIFIC PAGE LAYOUT
+   ======================================== */
+
+.product-specific-container {
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-3xl);
+}
+
+.breadcrumbs {
+    margin-bottom: var(--space-md);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-dark);
+}
+
+.breadcrumbs a:hover {
+    margin-bottom: var(--space-md);
+    color: var(--color-primary);
+}
+
+/* MOBILE DEFAULT: Stacked Column */
+.product-layout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+}
+
+/* Gallery - Mobile Scroll */
+.gallery-main {
+    display: flex;
+    overflow-x: auto; /* Allow side scrolling */
+    scroll-snap-type: x mandatory; /* Snap effect */
+    gap: 10px;
+}
+
+.gallery-main img {
+    width: 100%;
+    scroll-snap-align: center;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+}
+
+.gallery-thumbnails {
+    display: none; /* Hide thumbs on mobile */
+}
+
+/* DESKTOP LAYOUT (900px+) */
+@media (min-width: 900px) {
+    
+    .product-layout {
+        display: grid;
+        /* 1.2fr (Gallery) | 1fr (Info) */
+        grid-template-columns: 1.2fr 1fr; 
+        gap: var(--space-2xl);
+        align-items: start;
+    }
+
+    /* Desktop Gallery Grid */
+    .product-gallery {
+        display: grid;
+        grid-template-columns: 80px 1fr; /* Thumbs | Main */
+        gap: var(--space-md);
+        position: sticky;
+        top: 20px;
+    }
+    
+    .gallery-thumbnails {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        order: -1; /* Move to left */
+    }
+
+    .thumb {
+        background: none; border: none; padding: 0; cursor: pointer;
+    }
+
+    .thumb img {
+        width: 100%;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+        opacity: 0.6;
+        transition: opacity 0.2s;
+    }
+    
+    .thumb:hover img, .thumb.active img { opacity: 1; }
+
+    .gallery-main { overflow: visible; }
+}

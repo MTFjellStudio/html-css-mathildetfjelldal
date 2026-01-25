@@ -12,79 +12,78 @@
 /*Consider making breakpoint 600 or 700? The Image for mobile becomes too blurry nd there is space on the header for desktop menu at smaller width.*/
 @media (min-width: 900px) {
 
-  .dropdown-item {
-      position: relative;
-      height: 100%;
-  }
+    .dropdown-item {
+        position: relative;
+        height: 100%;
+    }
 
-  .dropdown-trigger {
-      display: flex;
-      align-items: center;
-      gap: 8px;
+    .dropdown-trigger {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background-color: var(--color-white);
+        color: var(--color-text-dark);
+        padding: 16px 16px;
+        text-decoration: none;
+        transition: all 0.5s ease;
+        border-radius: 0;
+    }
 
-      background-color: var(--color-white);
-      color: var(--color-text-dark);
-      padding: 16px 16px;
-      text-decoration: none;
-      transition: all 0.5s ease;
-      border-radius: 0;
-  }
+    .dropdown-trigger i {
+        font-size: 0.75rem;
+        transition: transform 0.3s ease;
+    }
 
-  .dropdown-trigger i {
-      font-size: 0.75rem;
-      transition: transform 0.3s ease;
-  }
+    .dropdown-item:hover .dropdown-trigger {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+    }
 
-  .dropdown-item:hover .dropdown-trigger {
-      background-color: var(--color-primary);
-      color: var(--color-white);
-  }
+    .dropdown-item:hover .dropdown-trigger i {
+        transform: rotate(180deg);
+    }
 
-  .dropdown-item:hover .dropdown-trigger i {
-      transform: rotate(180deg);
-  }
+    .dropdown-menu {
+        display: none;
 
-  .dropdown-menu {
-      display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
 
-      position: absolute;
-      top: 100%;
-      left: 0;
+        min-width: 200px;
+        background-color: var(--color-white);
+        padding: 10px 0;
 
-      min-width: 200px;
-      background-color: var(--color-white);
-      padding: 10px 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 100;
 
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      z-index: 100;
+        flex-direction: column;
+        gap: 0;
+        list-style: none;
+    }
 
-      flex-direction: column;
-      gap: 0;
-      list-style: none;
-  }
+    .dropdown-item:hover .dropdown-menu {
+        display: flex;
+    }
 
-  .dropdown-item:hover .dropdown-menu {
-      display: flex;
-  }
+    .dropdown-menu li {
+        width: 100%;
+    }
 
-  .dropdown-menu li {
-      width: 100%;
-  }
+    .dropdown-menu a {
+        display: block;
+        padding: 10px 20px;
+        color: var(--color-text-dark);
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: background 0.2s;
+    }
 
-  .dropdown-menu a {
-      display: block;
-      padding: 10px 20px;
-      color: var(--color-text-dark);
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: background 0.2s;
-  }
-
-  .dropdown-menu a:hover {
-      background-color: var(--color-primary);
-      color: var(--color-text-light);
-      transition: background-color 0.4s ease, color 0.4s ease;
-  }
+    .dropdown-menu a:hover {
+        background-color: var(--color-primary);
+        color: var(--color-text-light);
+        transition: background-color 0.4s ease, color 0.4s ease;
+    }
 
 }
 
@@ -393,7 +392,6 @@
     border: none;
     text-align: center;
     font-weight: 600;
-    -moz-appearance: textfield; /* Remove arrows Firefox */
 }
 
 

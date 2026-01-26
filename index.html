@@ -45,7 +45,13 @@
     <header>
         <div class="header-inner">
             <a href="index.html" class="logo">
-                <img src="images/rainy-days-logo/rainy-days-logo.png" alt="Rainy Days Logo">
+                <picture>
+                    <!-- DESKTOP: Shows the full logo with text on screens 900px+ -->
+                    <source media="(min-width: 900px)" srcset="images/rainy-days-logo/rainy-days-logo.png">
+                    
+                    <!-- MOBILE: Shows only the symbol/icon on smaller screens -->
+                    <img src="images/rainy-days-logo/rainy-days-logo(1).png" alt="Rainy Days Logo">
+                </picture>
             </a>
 
             <nav class="main-nav" aria-label="Desktop navigation">    

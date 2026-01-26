@@ -146,7 +146,7 @@ header {
 }
 
 .logo img {
-    height: 40px;
+    height: 60px; /* Changed from 40px */
     width: auto;
 }
 
@@ -181,8 +181,9 @@ header {
     }
 
     .logo img {
-        height: 50px;
-    }
+    height: 90px; /* Changed from 50px */
+    width: auto;
+}
     
     .header-icons {
         gap: var(--space-lg);

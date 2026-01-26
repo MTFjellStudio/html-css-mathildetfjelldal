@@ -127,6 +127,7 @@
 header {
     background-color: var(--color-secondary);
     border-bottom: 1px solid var(--color-border);
+    position: relative;
 }
 
 .header-inner {
@@ -301,6 +302,43 @@ header {
 /* The Mobile Hamburger Menu does not want to work for some reason. 
 I may have set it up incorrectly. 
 The checkbox method is used to toggle the menu visibility, but wont work with my dropdown menu for desktop. */
+
+/* Remove default triangle marker from <details> */
+details > summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--font-size-md); /* Matches your nav links */
+    font-weight: 500;
+    padding: 10px 0; /* Gives it a button feel */
+}
+
+/* Chrome/Safari specific marker removal */
+details > summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Rotate the arrow icon when opened */
+details[open] summary i {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+/* Style the sub-menu links */
+.mobile-sub-menu {
+    padding-left: 20px; /* Indent sub-items */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.mobile-sub-menu a {
+    font-size: 0.95rem; /* Slightly smaller than main links */
+    opacity: 0.9;
+}
 
 
 /* ========================================

@@ -91,30 +91,36 @@
             </nav>
 
             <div class="header-icons">
+                <!-- Desktop Icons -->
                 <a href="#search" class="icon-link"><i class="fa-solid fa-magnifying-glass"></i></a>
                 <a href="#wishlist" class="icon-link"><i class="fa-solid fa-heart"></i></a>
                 <a href="#share" class="icon-link"><i class="fa-solid fa-share-nodes"></i></a>
                 <a href="cart.html" class="icon-link"><i class="fa-solid fa-cart-shopping"></i></a>
-                
+
+                <!-- THE TRIGGER: This label is the actual "Button" users click for the HAMBURGER MENU. -->
                 <label for="menu-toggle" class="menu-toggle-label icon-link" aria-label="Toggle navigation menu">
                     <i class="fa-solid fa-bars"></i>
                 </label>
             </div>
-        </div>
+        </div> <!-- Closes .header-inner -->
 
+        <!-- THE STATE: This checkbox controls the show/hide logic -->
+        <!-- Must match the ID in the label above ('menu-toggle') -->
         <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
 
+        <!-- REMOVE THE EXTRA <label class="hamburger"> BLOCK HERE -->
+
+        <!-- THE CONTENT: The Mobile Menu itself -->
         <nav class="main-nav-mobile" aria-label="Mobile navigation">
             <ul class="nav-list-mobile">
-                
                 <li>
+                    <!-- Uses <details> for mobile "click" dropdowns -->
                     <details class="mobile-dropdown">
                         <summary>Women <i class="fa-solid fa-chevron-down"></i></summary>
                         <ul class="mobile-sub-menu">
                             <li><a href="products-women.html">All Jackets</a></li>
                             <li><a href="products-women.html">Hiking</a></li>
                             <li><a href="products-women.html">Activewear</a></li>
-                            <li><a href="products-women.html">Everyday</a></li>
                             <li><a href="products-women.html">Skiing</a></li>
                         </ul>
                     </details>

@@ -3,7 +3,7 @@
    ======================================= */
 
 /* ========================================
-   UNIVERSAL CONTAINER FOR MAIN CONTENT
+   UNIVERSAL CONTAINER FOR MAIN CONTENT - Use padding instead?
    ======================================== */
 
 .container {
@@ -305,7 +305,7 @@ header {
     width: 100%;
 }
 
-/* --- 1. THE TEXT (Mobile: orange AUTUMN COLLECTION on top.) Hide other text on mobile, make image clickable. --- */
+/* THE TEXT (Mobile: orange AUTUMN COLLECTION on top.) Hide other text on mobile, make image clickable. */
 .hero-content {
     /* Order -1 moves it visually to the top on Mobile */
     order: -1; 
@@ -531,6 +531,64 @@ footer {
     }
 }
 
+/* ========================================
+   CATEGORY GRID LAYOUT
+   ======================================== */
+
+.category-grid {
+    display: grid;
+    /* TINY SCREENS (Safety Mode) */
+    /* If screen is super skinny (<350px), force 1 column so text fits */
+    grid-template-columns: 1fr; 
+    gap: var(--space-md);
+    margin-bottom: var(--space-3xl);
+    align-items: center; /* Vertically center items */
+}
+
+/* Make the Slogan span across 2 columns on mobile or make it disappear entirely? */
+.category-slogan {
+    display: none; /* This hides slogan on mobile to match Figma */
+}
+
+/*DESKTOP OVERRIDES */
+
+@media (min-width: 900px) {
+    .category-slogan {
+        display: block; /* Show slogan on desktop */
+        text-align: left;
+        padding: 0;
+        margin: 0;
+    }
+} 
+
+/* STANDARD MOBILE (350px+) */
+@media (min-width: 350px) {
+    .category-grid {
+    display: grid;
+    /* 2 Columns */
+    grid-template-columns: 1fr 1fr; 
+    gap: var(--space-md);
+    margin-bottom: var(--space-3xl);
+    align-items: center; /* Vertically center items */
+    }
+}
+
+@media (min-width: 900px) {
+    
+    .category-grid {
+        /* 3 Columns */
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: var(--space-lg);
+    }
+
+    /* Reset Slogan to take just 1 column */
+    .category-slogan {
+        grid-column: auto; 
+        text-align: left;
+        padding: 0;
+        margin: 0;
+    }
+}
 
 /* ========================================
    PRODUCT GRID LAYOUT
@@ -538,7 +596,7 @@ footer {
 
 .product-grid {
     display: grid;
-    /* STEP 1: TINY SCREENS (Safety Mode) */
+    /* TINY SCREENS (Safety Mode) */
     /* If screen is super skinny (<350px), force 1 column so text fits */
     grid-template-columns: 1fr; 
     gap: var(--space-md); 
@@ -546,7 +604,7 @@ footer {
     /* Removed margin: 16px; */
 }
 
-/* STEP 2: STANDARD MOBILE (350px+) */
+/* STANDARD MOBILE (350px+) */
 @media (min-width: 350px) {
     .product-grid {
         grid-template-columns: repeat(2, 1fr); /* The standard 2-col view */
@@ -554,7 +612,7 @@ footer {
     }
 }
 
-/* STEP 3: DESKTOP LUXURY (900px+) */
+/* DESKTOP LUXURY (900px+) */
 @media (min-width: 900px) {
     .product-grid {
         grid-template-columns: repeat(3, 1fr); /* Switch to 3 columns */

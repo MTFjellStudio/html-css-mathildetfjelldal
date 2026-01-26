@@ -201,7 +201,7 @@
     height: 100%; /* Ensures uniform height if I use flexbox on parent */
 }
 
-/* 2. THE IMAGE INSIDE. I need to give it a crop of some kind. */
+/* THE IMAGE INSIDE. I need to give it a crop of some kind. */
 .card-media img {
     display: block; /* Forces the image to fill the container completely */
     height: 100%;
@@ -210,7 +210,7 @@
     aspect-ratio: 3 / 4;
 }
 
-/* 3. THE TEXT */
+/* THE TEXT */
 .card-info {
     display: flex;
     flex-direction: column;
@@ -225,7 +225,7 @@
     font-family: var(--font-body);
 }
 
-.card-price-rating .price { /* Note: Capital 'P' to match your HTML */
+.card-price-rating .price {
     font-size: 1rem;
     font-weight: 500;
     margin: 0;
@@ -246,7 +246,7 @@
         padding: 16px;
     }
 
-    /* FIX: your card uses h2 right now; this supports either h2 or h3 */
+    /* FIX */
     .card-title h2,
     .card-title h3 {
         font-size: 1.1rem;
@@ -260,12 +260,92 @@
 
 }
 
+/* ========================================
+   FEATURED CATEGORY CARD - MOBILE FIRST, but switches on desktop.
+   ======================================== */
+
+.category-card {
+    display: block;
+    text-decoration: none;
+    position: relative;
+    
+    /* I wanted to try this for the border effect, but still figuring out the border distance. */
+    border: 16px solid transparent; 
+    transition: all 0.5s ease;
+}
+
+/* --- MOBILE STATE (Default) --- */
+
+/* Hide the Image */
+.category-card .card-bg {
+    display: none; 
+}
+
+/* Style the Link itself to look like a button container. Question is, how do I make the button for mobile but clickable text on image for desktop? */
+.category-card {
+    background-color: transparent; 
+    text-align: center;
+}
+
+/* Styles the inner .btn to fill the space */
+.category-card .btn {
+    display: block;
+    width: 100%;
+    /* On mobile, removes absolute positioning */
+    position: static; 
+    transform: none;
+    margin: 0;
+}
+
+/* --- DESKTOP STATE (900px+) --- */
+@media (min-width: 900px) {
+
+    .category-card {
+        /* Forced rectangle shape, landscape ratio instead of portrait like the product cards. */
+        aspect-ratio: 4 / 3; 
+        overflow: hidden;
+    }
+
+    /* Show Image */
+    .category-card .card-bg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    /* 2. Position the Button on top of image and remove button background. */
+    .category-card .btn {
+        background-color: transparent; /* Remove button background */
+        font-size: var(--font-size-h2); /* Make text larger */
+        font-weight: var(--font-weight-medium);
+        position: absolute;
+        bottom: 20px;
+        left: 16px;
+        width: auto; /* Let text define width */
+        min-width: 140px;
+    }
+
+    /* --- HOVER EFFECT --- */
+
+    /* Orange Border (Uses the transparent border, although I would like to find a more straight forward way if possible.) */
+    .category-card:hover {
+        border-color: var(--color-primary);
+    }
+}
+
+/* --- MOBILE INTERACTION (Touch) --- */
+/* Change color on button click. */
+.category-card:active .btn {
+    background-color: var(--color-secondary);
+}
 
 /* ========================================
    PRODUCT FORMS & INPUTS
    ======================================== */
 
-/* 1. RESET FIELDSETS (Remove ugly browser defaults) */
+/* RESET FIELDSETS (Remove ugly browser defaults) */
 .form-row {
     border: none;
     padding: 0;
@@ -281,7 +361,7 @@
     width: 100%;
 }
 
-/* 2. HORIZONTAL ALIGNMENT (The Answer to your Question!) */
+/* HORIZONTAL ALIGNMENT (The Answer to your Question!) */
 .color-options,
 .size-options {
     display: flex; /* This makes the buttons sit in a row */

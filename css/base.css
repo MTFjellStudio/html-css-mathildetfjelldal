@@ -5,6 +5,7 @@
 html {
     box-sizing: border-box;
     font-size: 100%; /* Base 16px */
+    font-family: var(--font-body);
 }
 
 *, *:before, *:after {
@@ -36,6 +37,6 @@ ul {
 }
 
 button, input, select {
-    font-family: inherit;
-    font-size: 1rem;
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
 }

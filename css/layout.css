@@ -343,7 +343,7 @@ details[open] summary i {
 
 
 /* ========================================
-   HERO SECTION (Semantic HTML Version)
+   HERO SECTION
    ======================================== */
 
 .hero-banner {
@@ -378,7 +378,7 @@ details[open] summary i {
     display: none; 
 }
 
-/* --- 2. THE IMAGE (Mobile: Tall Portrait) --- */
+/* --- THE IMAGE (Mobile: Tall Portrait) --- */
 .hero-media {
     position: relative; /* For the price tag */
     width: 100%;

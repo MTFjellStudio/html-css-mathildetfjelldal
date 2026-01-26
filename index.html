@@ -44,20 +44,17 @@
     <!-- MAIN HEADER: Logo, Navigation, Icons -->
     <header>
         <div class="header-inner">
-            <!-- Logo -->
             <a href="index.html" class="logo">
                 <img src="images/rainy-days-logo/rainy-days-logo.png" alt="Rainy Days Logo">
             </a>
 
-            <!-- Main Navigation -->
-            <nav class="main-nav" aria-label="Main navigation">    
+            <nav class="main-nav" aria-label="Desktop navigation">    
                 <ul class="nav-list">
-        
+                    
                     <li class="dropdown-item">
-                        <a href="products-women.html" class="dropdown-trigger" aria-label="Products Women">
+                        <a href="products-women.html" class="dropdown-trigger">
                             Women <i class="fa-solid fa-chevron-down"></i>
                         </a>
-
                         <ul class="dropdown-menu">
                             <li><a href="products-women.html">All Jackets</a></li>
                             <li><a href="products-women.html">Hiking</a></li>
@@ -68,59 +65,85 @@
                     </li>
 
                     <li class="dropdown-item">
-                        <a href="products-women.html" class="dropdown-trigger" aria-label="Products Men">
+                        <a href="products-men.html" class="dropdown-trigger">
                             Men <i class="fa-solid fa-chevron-down"></i>
                         </a>
-
                         <ul class="dropdown-menu">
-                            <li><a href="products-women.html">All Jackets</a></li>
-                            <li><a href="products-women.html">Hiking</a></li>
-                            <li><a href="products-women.html">Activewear</a></li>
-                            <li><a href="products-women.html">Everyday</a></li>
-                            <li><a href="products-women.html">Skiing</a></li>
+                            <li><a href="products-men.html">All Jackets</a></li>
+                            <li><a href="products-men.html">Hiking</a></li>
+                            <li><a href="products-men.html">Activewear</a></li>
+                            <li><a href="products-men.html">Everyday</a></li>
+                            <li><a href="products-men.html">Skiing</a></li>
                         </ul>
                     </li>
+
                     <li class="dropdown-item">
-                        <a href="about.html" class="dropdown-trigger" aria-label="About">
+                        <a href="about.html" class="dropdown-trigger">
                             About <i class="fa-solid fa-chevron-down"></i>
                         </a>
-
                         <ul class="dropdown-menu">
                             <li><a href="about.html">Our Story</a></li>
                             <li><a href="about.html">Sustainability</a></li>
-                            <li><a href="about.html">Contact Us</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
 
-            <!-- Header Icons + Mobile Hamburger -->
             <div class="header-icons">
-                <a href="#search" aria-label="Search" class="icon-link">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </a>
-                <a href="#wishlist" aria-label="Wishlist" class="icon-link">
-                    <i class="fa-solid fa-heart"></i>
-                </a>
-                <a href="#share" aria-label="Share" class="icon-link">
-                    <i class="fa-solid fa-share-nodes"></i>
-                </a>
-                <a href="cart.html" aria-label="Cart" class="icon-link">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </a>
+                <a href="#search" class="icon-link"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="#wishlist" class="icon-link"><i class="fa-solid fa-heart"></i></a>
+                <a href="#share" class="icon-link"><i class="fa-solid fa-share-nodes"></i></a>
+                <a href="cart.html" class="icon-link"><i class="fa-solid fa-cart-shopping"></i></a>
                 
-                <!-- Mobile Hamburger Toggle (part of icons row) -->
-                <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
-                <label for="menu-toggle" class="menu-toggle-label icon-link" aria-label="Toggle navigation menu">☰</label>
+                <label for="menu-toggle" class="menu-toggle-label icon-link" aria-label="Toggle navigation menu">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
             </div>
         </div>
 
-        <!-- Mobile Navigation Dropdown -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+
         <nav class="main-nav-mobile" aria-label="Mobile navigation">
-            <ul class="nav-list">
-                <li><a href="products-women.html">Women</a></li>
-                <li><a href="products-men.html">Men</a></li>
-                <li><a href="about.html">About</a></li>
+            <ul class="nav-list-mobile">
+                
+                <li>
+                    <details class="mobile-dropdown">
+                        <summary>Women <i class="fa-solid fa-chevron-down"></i></summary>
+                        <ul class="mobile-sub-menu">
+                            <li><a href="products-women.html">All Jackets</a></li>
+                            <li><a href="products-women.html">Hiking</a></li>
+                            <li><a href="products-women.html">Activewear</a></li>
+                            <li><a href="products-women.html">Everyday</a></li>
+                            <li><a href="products-women.html">Skiing</a></li>
+                        </ul>
+                    </details>
+                </li>
+
+                <li>
+                    <details class="mobile-dropdown">
+                        <summary>Men <i class="fa-solid fa-chevron-down"></i></summary>
+                        <ul class="mobile-sub-menu">
+                            <li><a href="products-men.html">All Jackets</a></li>
+                            <li><a href="products-men.html">Hiking</a></li>
+                            <li><a href="products-men.html">Activewear</a></li>
+                            <li><a href="products-men.html">Everyday</a></li>
+                            <li><a href="products-men.html">Skiing</a></li>
+                        </ul>
+                    </details>
+                </li>
+
+                <li>
+                    <details class="mobile-dropdown">
+                        <summary>About <i class="fa-solid fa-chevron-down"></i></summary>
+                        <ul class="mobile-sub-menu">
+                            <li><a href="about.html">Our Story</a></li>
+                            <li><a href="about.html">Sustainability</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </details>
+                </li>
+
             </ul>
         </nav>
     </header>

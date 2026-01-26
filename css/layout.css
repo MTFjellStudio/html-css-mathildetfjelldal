@@ -190,7 +190,7 @@ header {
 
 
 /* ========================================
-   NAVIGATION (Mobile Hamburger & Main Nav)
+   NAVIGATION (Main Navigation Menu)
    ======================================== */
 
 /* Hidden checkbox that controls menu state */
@@ -292,6 +292,15 @@ header {
         font-size: var(--font-size-md);
     }
 }
+
+
+/* ========================================
+   MOBILE HAMBURGER menu
+   ======================================== */
+
+/* The Mobile Hamburger Menu does not want to work for some reason. 
+I may have set it up incorrectly. 
+The checkbox method is used to toggle the menu visibility, but wont work with my dropdown menu for desktop. */
 
 
 /* ========================================

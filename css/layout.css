@@ -365,6 +365,10 @@ details[open] summary i {
     z-index: 2; /* Ensure text sits on top as a"button". */
 }
 
+.hero-content:hover {
+    background-color: var(--color-secondary); /* Darker orange on hover */
+}
+
 .hero-content h1 {
     font-size: var(--font-size-lg);
     text-transform: uppercase;
@@ -401,6 +405,12 @@ details[open] summary i {
     padding: 16px 16px;
     font-weight: bold;
     z-index: 2;
+}
+
+.hero-text-link {
+    text-decoration: none; /* Removes the line */
+    color: inherit;
+    display: block;
 }
 
 /* --- DESKTOP HERO OVERRIDES (900px+) --- */
@@ -454,6 +464,10 @@ details[open] summary i {
         margin-bottom: 1rem;
         text-transform: none;
     }
+
+    .hero-content:hover {
+    background-color: transparent; /* No orange on hover */
+}
 
     /* Show the elements we hid on mobile */
     .hero-content p,
@@ -639,7 +653,38 @@ footer {
 }
 
 /* ========================================
-   PRODUCT GRID LAYOUT
+   PROMO GRID LAYOUT
+   ======================================== */
+
+.promo-grid {
+    display: grid;
+    /* TINY SCREENS (Safety Mode) */
+    /* If screen is super skinny (<350px), force 1 column so text fits */
+    grid-template-columns: 1fr; 
+    gap: var(--space-md); 
+    margin-bottom: var(--space-3xl);
+}
+
+/* STANDARD MOBILE (350px+) - Force side-by-side for promos */
+@media (min-width: 350px) {
+    .promo-grid {
+        grid-template-columns: 1fr 1fr; /* 2 columns side-by-side */
+    }
+}
+
+
+/* DESKTOP LUXURY (900px+) */
+@media (min-width: 900px) {
+    .promo-grid {
+        grid-template-columns: repeat(2, 1fr); /* Switch to 3 columns */
+        gap: var(--space-lg); /* Bigger gaps */
+    }
+}   
+
+
+
+/* ========================================
+   PRODUCT GRID LAYOUT (Products-women, homepage etc.)
    ======================================== */
 
 .product-grid {

@@ -100,6 +100,7 @@
     padding: 12px 24px;
     font-weight: 600;
     text-transform: uppercase;
+    text-decoration: none; /* Removes the line */
     
     /* SQUARE EDGES */
     border-radius: 0;
@@ -116,6 +117,7 @@
     border: none;
     padding: 12px 24px;
     font-weight: 600;
+    text-decoration: none; /* Removes the line */
     
     /* SQUARE EDGES */
     border-radius: 0;
@@ -126,10 +128,23 @@
 }
 
 /* Orange Pay Now XL Desktop */
-/* Green Information Button / Dropdown wth + sign */
-/* Chevron Button Right / All buttons, show on hover? */
-/* Filter button / */
-/* Sort button / dropdown */
+.btn-paynow-xl {
+    background-color: var(--color-primary); /* Orange */
+    color: var(--color-white);
+    border: none;
+    padding: 16px 32px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    text-decoration: none; /* Removes the line */
+
+    /* SQUARE EDGES */
+    border-radius: 0;
+}
+
+.btn-paynow-xl:hover {
+    background-color: var(--color-secondary); /* Orange */
+}
 
    /* SUBSCRIBE BUTTON FOOTER TEMP - Considering how to use chevron as button instead. */
     .btn-subscribe {
@@ -139,6 +154,7 @@
     padding: 12px 24px;
     font-weight: 600;
     text-transform: uppercase;
+    text-decoration: none; /* Removes the line */
     cursor: pointer;
     transition: background 0.2s;
     
@@ -150,6 +166,110 @@
     background-color: var(--color-secondary); /* Sage green */
 }
 
+/* ========================================
+   DROPDOWNS
+   ======================================== */
+
+   /* ========================================
+   Green Information Button / Dropdown with a + sign
+   ======================================== */
+
+.product-details-accordion {
+    display: flex;
+    flex-direction: column;
+    /* Optional: spacing between the green bars */
+    gap: 1px; 
+}
+
+/* Closed state: Sage Green Background / White Text */
+.info-item summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    cursor: pointer;
+    list-style: none;
+    
+    background-color: var(--color-secondary); 
+    color: var(--color-white);
+    
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 1px solid transparent; /* To prevent jumping on hover */
+}
+
+/* Removes default browser marker */
+.info-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.info-item summary:hover {
+    background-color: var(--color-white);
+    color: var(--color-text-dark);
+    border-color: var(--color-secondary); /* Add border so it doesn't disappear */
+}
+
+/* This is the open state: Keeps white background and black text for reading like on hover. */
+.info-item[open] summary {
+    background-color: var(--color-white);
+    color: var(--color-text-dark);
+    border-bottom: 1px solid transparent; /* Connects smoothly to content */
+}
+
+/* --- icon animation on click --- */
+.info-item summary i {
+    transition: transform 0.3s ease;
+}
+
+/* Rotates "+" icon when opening */
+.info-item[open] summary i {
+    transform: rotate(45deg); 
+}
+
+.info-content {
+    padding: 16px 20px;
+    background-color: var(--color-white); /* White background for reading */
+    color: var(--color-text-dark);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    
+    /* Adds a subtle border to frame the content, although it might be removed and a shadow added instead. */
+    border: 1px solid var(--color-bg-muted); 
+    border-top: none; /* Merges with the header */
+}
+
+.info-content ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+/* ========================================
+   SORT AND FILTER TOOLBAR
+   ======================================== */
+   
+.toolbar {
+    display: flex;
+    justify-content: space-between; /* Pushes Filter left, Sort right */
+    margin-bottom: var(--space-lg);
+}
+
+/* Transparent Button Style */
+.tool-btn {
+    background-color: transparent;
+    border: 1px solid var(--color-text-dark); /* Optional border */
+    padding: 8px 16px;
+    cursor: pointer;
+    position: relative; /* For dropdown positioning */
+    transition: background-color 0.3s;
+}
+
+/* Hover/Active State = White Background */
+.tool-btn:hover, .tool-btn:focus {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+}
 
 /* ========================================
    PRODUCT CARD (Mobile First)

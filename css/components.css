@@ -98,7 +98,7 @@
     color: var(--color-white);
     border: none;
     padding: 12px 24px;
-    font-weight: 600;
+    font-weight: var(--font-weight-bold);
     text-transform: uppercase;
     text-decoration: none; /* Removes the line */
     cursor: pointer;
@@ -114,8 +114,21 @@
 
 /* Narrow Button - Standard size */
 .btn-narrow {
+    background-color: var(--color-primary); /* Orange */
+    color: var(--color-white);
+    border: none;
     padding: 12px 24px;
-    font-weight: 600;
+    font-weight: var(--font-weight-medium);
+    text-decoration: none; /* Removes the line */
+    cursor: pointer;
+    transition: background-color 0.2s;
+    
+    /* SQUARE EDGES */
+    border-radius: 0;
+}
+
+.btn-narrow:hover {
+    background-color: var(--color-secondary); /* Orange */
 }
 
 /* Wide Button - Extra large for prominent CTAs like Pay Now */
@@ -123,6 +136,17 @@
     padding: 16px 32px;
     font-weight: 700;
     font-size: 1.25rem;
+    background-color: var(--color-primary); /* Orange */
+    color: var(--color-white);
+    border: none;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    text-decoration: none; /* Removes the line */
+    cursor: pointer;
+    transition: background-color 0.2s;
+    
+    /* SQUARE EDGES */
+    border-radius: 0;
 }
 
 /* ========================================

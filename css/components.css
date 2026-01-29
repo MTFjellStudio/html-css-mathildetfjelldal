@@ -278,10 +278,11 @@
 .product-card {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 4px;
     cursor: pointer;
     text-decoration: none;
     color: inherit;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
     
     /* To ensure the card itself acts as a hover trigger */
     cursor: pointer;
@@ -308,8 +309,20 @@
     transition: background-color 0.2s ease;
 }
 
-/* Orange frame on hover effect */
-.card-media:hover {
+/* Orange frame on hover effect - triggers on both card-media and card-footer */
+.card-media:hover,
+.card-footer:hover {
+    background-color: var(--color-primary);
+}
+
+/* If card-footer comes after card-media, turn it orange too when card-media is hovered */
+.card-media:hover ~ .card-footer {
+    background-color: var(--color-primary);
+}
+
+/* Full two-way hover: when either is hovered, both respond */
+.product-card:has(.card-media:hover) .card-footer,
+.product-card:has(.card-footer:hover) .card-media {
     background-color: var(--color-primary);
 }
 
@@ -341,21 +354,38 @@
     gap: 4px;
 }
 
+.card-title {
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    margin: 8px;
+    font-family: var(--font-body);
+}
+
 /* Typography clean-up */
 .card-title h2 {
-    font-size: 1rem;
+    font-size: var(--font-size-sm);
     font-weight: 600;
     margin: 0;
     font-family: var(--font-body);
 }
 
 .card-price-rating .price {
-    font-size: 1rem;
+    font-size: var(--font-size-sm);
     font-weight: 500;
     margin: 0;
     color: var(--color-white);
     background-color: var(--color-bg-muted);
 }
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    color: var(--color-text-light);
+    background-color: var(--color-secondary);
+}
+
 
 
 /* Desktop override for card (moved from layout.css + fixed selector compatibility) */
@@ -373,14 +403,15 @@
     /* FIX */
     .card-title h2,
     .card-title h3 {
-        font-size: 1.1rem;
+        font-size: var(--font-size-h4);
     }
 
     /* FIX: support both possible price containers */
     .card-footer .price,
     .card-price-rating .price {
-        font-size: 1.25rem;
+        font-size: var(--font-size-md);
     }
+
 
 }
 

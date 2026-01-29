@@ -162,19 +162,43 @@
 
     <main id="main">
         <div class="container success-container">
-
-            <div class="breadcrumbs">
-                <a href="index.html">Home</a> / <span>Success</span>
-            </div>
-
-            <h2>Thank you for your purchase!</h2>
-            <p>Your order has been successfully processed. A confirmation email has been sent to your inbox.</p>
             
-            <p>If you have any questions about your order, please feel free to <a href="about.html">contact our support team</a>.</p>
-            
-            <a href="index.html" class="btn">Continue Shopping</a>
+            <!-- Success Message Section -->
+            <section class="success-message">
+                <div class="success-icon">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h1>Payment Successful!</h1>
+                <p>Order #12345 has been confirmed.<br>
+                   Your product is on its way and you will recieve an email shortly.</p>
+                <a href="index.html" class="btn">Continue Shopping</a>
+            </section>
 
-            
+            <hr class="divider">
+
+            <!-- 3-Column Category Grid (Reusing existing layout) -->
+            <section class="category-grid">
+                <!-- 1. Men -->
+                <a href="products-men.html" class="category-card" aria-label="Shop Men">
+                    <!-- Ensure you use your actual image path -->
+                    <img src="images/rainy-days-jacket1/rainy-days-jacket1-v2.png" alt="" class="card-bg">
+                    <span class="btn">Men</span>
+                </a>
+
+                <!-- 2. Women -->
+                <a href="products-women.html" class="category-card" aria-label="Shop Women">
+                    <img src="images/rainy-days-jacket6/rainy-days-jacket6-women-inmotion.png" alt="" class="card-bg">
+                    <span class="btn">Women</span>
+                </a>
+
+                <!-- 3. Bestsellers (Using your Bestseller image) -->
+                <a href="products-women.html" class="category-card" aria-label="Shop Bestsellers">
+                    <img src="images/rainy-days-jacket4/rainy-days-jacket4-men-inmotion.png" alt="" class="card-bg">
+                    <span class="btn">Bestsellers</span>
+                </a>
+            </section>
+
+        </div>
     </main>
 
     <footer>

@@ -624,14 +624,6 @@ footer {
         grid-column: -2;
         grid-row: 1;
     }
-    
-    .featured-one {
-        /* This one is giving problems. I need to move this one above the category-grid in column 1. How? */
-    }
-    
-    .featured-two {
-        
-    }
 }
 
 
@@ -799,8 +791,36 @@ footer {
     object-fit: cover;
 }
 
+/* Mobile Thumbnails - Show below main image in horizontal row */
 .gallery-thumbnails {
-    display: none; /* Hide thumbs on mobile */
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-md);
+    overflow-x: auto;
+    padding-bottom: var(--space-sm);
+    padding-top: var(--space-md);
+}
+
+.thumb {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.thumb img {
+    width: 60px;
+    height: auto;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.thumb:hover img,
+.thumb.active img {
+    opacity: 1;
 }
 
 /* Product Bottom Section - Reviews and More Information */
@@ -836,21 +856,13 @@ footer {
         flex-direction: column;
         gap: 10px;
         order: -1; /* Move to left */
-    }
-
-    .thumb {
-        background: none; border: none; padding: 0; cursor: pointer;
+        overflow-x: visible;
+        padding-bottom: 0;
     }
 
     .thumb img {
         width: 100%;
-        aspect-ratio: 3/4;
-        object-fit: cover;
-        opacity: 0.6;
-        transition: opacity 0.2s;
     }
-    
-    .thumb:hover img, .thumb.active img { opacity: 1; }
 
     .gallery-main { overflow: visible; }
 
@@ -904,21 +916,180 @@ footer {
    CHECKOUT PAGE LAYOUT - With an accordion for Info, Shipping and Payment.
    ======================================== */
 
-.checkout-layout {
-    display: flex;
-    flex-direction: column; /* Mobile First: Stacked */
-    gap: var(--space-xl);
-
+.checkout-container {
+    padding-bottom: var(--space-3xl);
 }
 
+.checkout-layout {
+    display: flex;
+    flex-direction: column; /* Mobile: Stacked */
+    gap: var(--space-xl);
+    margin-top: var(--space-md);
+}
+
+.checkout-layout a {
+    display: block;
+    text-align: center;
+}
+
+/* --- THE ACCORDION STEPS --- */
+.checkout-step {
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: var(--space-md);
+}
+
+.checkout-step summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md) 0;
+    /* Optional: Make closed steps look "faded" or greyed out */
+    color: var(--color-text-dark);
+}
+
+/* Hide default marker */
+.checkout-step summary::-webkit-details-marker { display: none; }
+
+.checkout-step h3 {
+    margin: 0;
+    font-size: var(--font-size-h3);
+}
+
+/* Open State Animation */
+.checkout-step[open] summary {
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: var(--space-md);
+}
+
+.step-content {
+    padding-bottom: var(--space-lg);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Form inputs styling reuse */
+.form-group-row {
+    display: flex;
+    gap: var(--space-md);
+}
+.form-group-row .form-row {
+    flex: 1; /* Split width 50/50 */
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 0;
+}
+
+/* --- RIGHT COLUMN: SUMMARY --- */
+.summary-card {
+    background-color: var(--color-white); /* Light grey bg */
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+}
+
+.mini-cart-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+}
+
+.mini-cart-item img {
+    width: 60px;
+    height: 80px;
+    object-fit: cover;
+}
+
+/* ========================================
+   DESKTOP LAYOUT (900px+)
+   ======================================== */
 @media (min-width: 900px) {
     .checkout-layout {
         display: grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1fr; /* Forms take 2/3, Summary takes 1/3 */
+        gap: var(--space-3xl);
+        align-items: start; /* Prevents summary from stretching */
+    }
+
+    /* Make the Order Summary Sticky */
+    .checkout-summary {
+        position: sticky;
+        top: 20px; /* Stays 20px from top of screen while scrolling */
     }
 }
-
 
    /* ========================================
    SUCCESS PAGE LAYOUT
    ======================================== */
+
+.success-container {
+    padding-top: var(--space-3xl);
+    padding-bottom: var(--space-3xl);
+    /* Centralize everything in this container */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+}
+
+.success-message {
+    max-width: 600px;
+    margin-bottom: var(--space-3xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+/* The green checkbock icon */
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background-color: var(--color-success); /* Green background */
+    border-radius: 50%; /* Makes it a circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-md);
+}
+
+/* The Checkmark Icon */
+.success-icon i {
+    color: var(--color-white);
+    font-size: 2.5rem;
+}
+
+/* Typography Tweaks */
+.success-message h1 {
+    font-size: var(--font-size-h1); /* Uses your mobile/desktop responsive token [2, 3] */
+    margin: 0;
+}
+
+.success-message p {
+    color: var(--color-text-dark);
+    margin-bottom: var(--space-lg);
+}
+
+/* Divider line */
+.divider {
+    width: 100%;
+    max-width: 200px;
+    border: 0;
+    border-top: 1px solid var(--color-border);
+    margin-bottom: var(--space-3xl);
+}
+
+/* 
+   REUSING .category-grid 
+   Your existing layout.css [4] already sets this to 3 columns 
+   on desktop and 1 column on mobile. 
+   We just need to ensure it takes full width here.
+*/
+.success-container .category-grid {
+    width: 100%;
+    justify-content: center;
+}

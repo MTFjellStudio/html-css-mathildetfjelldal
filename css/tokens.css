@@ -146,6 +146,11 @@
   --transition-slow: 350ms ease-in-out;
 }
 
+   /* Header icon sizing (mobile-first). Override on larger viewports in media queries. */
+   :root {
+      --header-icon-size: 1rem; /* 16px default for mobile */
+   }
+
 /* ========================================
    DESKTOP ADJUSTMENTS (900px+)
    ======================================== */
@@ -165,5 +170,7 @@
     /* Desktop margins & gutters */
     --margin-page: 80px;            /* Desktop: page margin */
     --gutter-mobile: 20px;          /* Desktop: space between items */
+      /* Slightly larger header icons on desktop */
+      --header-icon-size: 1.25rem; /* ~20px on desktop */
   }
 }

@@ -161,7 +161,7 @@ header {
 }
 
 .icon-link {
-    font-size: 1rem;
+    font-size: var(--header-icon-size);
     color: var(--color-white);
     text-decoration: none;
     transition: transform var(--transition-fast);
@@ -594,6 +594,47 @@ footer {
 }
 
 /* ========================================
+   HOME-GRID LAYOUT - Parent grid of Category grid, Featured Products & Promo grid.
+   ======================================== */
+
+@media (min-width: 350px) and (max-width: 899px) {
+    .home-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2 columns */
+        gap: var(--space-md);
+    }
+    
+    /* Categories on left */
+    .category-grid {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    /* Promos on right */
+    .promo-grid {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    
+    /* Featured products span both columns below */
+    .featured-products {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+    
+    .featured-one {
+        grid-column: 1;
+        grid-row: -2; /* This one is giving problems. I need to move this one above the category-grid in column 1. How? */
+    }
+    
+    .featured-two {
+        grid-column: 2;
+        grid-row: 1;
+    }
+}
+
+
+/* ========================================
    CATEGORY GRID LAYOUT
    ======================================== */
 
@@ -627,8 +668,8 @@ footer {
 @media (min-width: 350px) {
     .category-grid {
     display: grid;
-    /* 2 Columns */
-    grid-template-columns: 1fr 1fr; 
+    /* 1 Columns for 350px or wider up to 899px */
+    grid-template-columns: 1fr; 
     gap: var(--space-md);
     margin-bottom: var(--space-3xl);
     align-items: center; /* Vertically center items */
@@ -668,7 +709,7 @@ footer {
 /* STANDARD MOBILE (350px+) - Force side-by-side for promos */
 @media (min-width: 350px) {
     .promo-grid {
-        grid-template-columns: 1fr 1fr; /* 2 columns side-by-side */
+        grid-template-columns: 1fr; /* 1 column to stack vertically */
     }
 }
 

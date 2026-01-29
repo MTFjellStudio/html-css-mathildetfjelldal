@@ -17,10 +17,10 @@
   --color-heading: #191919;         /* Dark gray/black: headings */
   
   /* Brand Colors */
-  --color-primary: #9e6129;         /* Warm orange: buttons, CTAs */
+  --color-primary: #8B5A2B;         /* Warm orange-brown: buttons, CTAs - WCAG AA compliant */
   --color-primary-dark: #191919;    /* Dark gray: topbar background */
-  --color-secondary: #7b8d7b;       /* Sage green: accents, muted backgrounds, header, footer, buttons, dropdowns */
-  --color-tertiary: #4f5c4f;       /* WCAG Test. Dark sage green: accents, muted backgrounds, header, footer, buttons, dropdowns */
+  --color-secondary: #6f846f;       /* Changed sage green, AA Compliant with white text: accents, muted backgrounds, header, footer, buttons, dropdowns */
+  --color-tertiary: #4f5c4f;       /* WCAG Tested. Dark sage green: accents, muted backgrounds, header, footer, buttons, dropdowns */
   --color-secondary-accent: #0a3641;/* Dark teal: secondary accents */
   
   /* Background Colors */
@@ -28,8 +28,8 @@
   --color-bg-muted: #7b8d7b;        /* Muted/secondary backgrounds */
   
   /* Semantic Colors */
-  --color-border: #d0d0d0;          /* Light borders, dividers */
-  --color-error: #d32f2f;           /* Error states */
+  --color-border: #999999;          /* Light borders, dividers */
+  --color-error: #B71C1C;           /* Error states */
   --color-success: #388e3c;         /* Success states */
 
 

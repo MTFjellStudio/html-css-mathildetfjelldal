@@ -726,7 +726,7 @@ footer {
 
 
 /* ========================================
-   PRODUCT GRID LAYOUT (Products-women, homepage etc.)
+   PRODUCT-GRID LAYOUT (Products-women, homepage etc.)
    ======================================== */
 
 .product-grid {
@@ -803,6 +803,14 @@ footer {
     display: none; /* Hide thumbs on mobile */
 }
 
+/* Product Bottom Section - Reviews and More Information */
+.product-bottom-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    margin-top: var(--space-2xl);
+}
+
 /* DESKTOP LAYOUT (900px+) */
 @media (min-width: 900px) {
     
@@ -845,7 +853,23 @@ footer {
     .thumb:hover img, .thumb.active img { opacity: 1; }
 
     .gallery-main { overflow: visible; }
+
+    .product-bottom-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-2xl);
+        align-items: start;
+    }
+
+    .product-reviews {
+        order: -1; /* Reviews on left */
+    }
+
+    .product-details-accordion {
+        order: 1; /* More Information on right */
+    }
 }
+
 
 /* ========================================
    CART PAGE LAYOUT
@@ -875,3 +899,26 @@ footer {
     aspect-ratio: 3/4;
     object-fit: cover;
 }
+
+/* ========================================
+   CHECKOUT PAGE LAYOUT - With an accordion for Info, Shipping and Payment.
+   ======================================== */
+
+.checkout-layout {
+    display: flex;
+    flex-direction: column; /* Mobile First: Stacked */
+    gap: var(--space-xl);
+
+}
+
+@media (min-width: 900px) {
+    .checkout-layout {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+
+   /* ========================================
+   SUCCESS PAGE LAYOUT
+   ======================================== */

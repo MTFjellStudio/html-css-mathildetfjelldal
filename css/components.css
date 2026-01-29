@@ -92,7 +92,7 @@
    BUTTONS
    ======================================== */
 
-/* Orange Wide Button */
+/* Base Button Style */
 .btn {
     background-color: var(--color-primary); /* Orange */
     color: var(--color-white);
@@ -101,6 +101,8 @@
     font-weight: 600;
     text-transform: uppercase;
     text-decoration: none; /* Removes the line */
+    cursor: pointer;
+    transition: background-color 0.2s;
     
     /* SQUARE EDGES */
     border-radius: 0;
@@ -110,60 +112,17 @@
     background-color: var(--color-secondary); /* Orange */
 }
 
-/* Orange Narrow Button */
+/* Narrow Button - Standard size */
 .btn-narrow {
-    background-color: var(--color-primary); /* Orange */
-    color: var(--color-white);
-    border: none;
     padding: 12px 24px;
     font-weight: 600;
-    text-decoration: none; /* Removes the line */
-    
-    /* SQUARE EDGES */
-    border-radius: 0;
 }
 
-.btn-narrow:hover {
-    background-color: var(--color-secondary); /* Orange */
-}
-
-/* Orange Pay Now XL Desktop */
-.btn-paynow-xl {
-    background-color: var(--color-primary); /* Orange */
-    color: var(--color-white);
-    border: none;
+/* Wide Button - Extra large for prominent CTAs like Pay Now */
+.btn-wide {
     padding: 16px 32px;
     font-weight: 700;
     font-size: 1.25rem;
-    text-transform: uppercase;
-    text-decoration: none; /* Removes the line */
-
-    /* SQUARE EDGES */
-    border-radius: 0;
-}
-
-.btn-paynow-xl:hover {
-    background-color: var(--color-secondary); /* Orange */
-}
-
-   /* SUBSCRIBE BUTTON FOOTER TEMP - Considering how to use chevron as button instead. */
-    .btn-subscribe {
-    background-color: var(--color-primary); /* Orange */
-    color: var(--color-white);
-    border: none;
-    padding: 12px 24px;
-    font-weight: 600;
-    text-transform: uppercase;
-    text-decoration: none; /* Removes the line */
-    cursor: pointer;
-    transition: background 0.2s;
-    
-    /* SQUARE EDGES */
-    border-radius: 0;
-}
-
-.btn-subscribe:hover {
-    background-color: var(--color-secondary); /* Sage green */
 }
 
 /* ========================================
@@ -190,7 +149,7 @@
     cursor: pointer;
     list-style: none;
     
-    background-color: var(--color-secondary); 
+    background-color: var(--color-tertiary); 
     color: var(--color-white);
     
     font-weight: 600;
@@ -253,6 +212,37 @@
     display: flex;
     justify-content: space-between; /* Pushes Filter left, Sort right */
     margin-bottom: var(--space-lg);
+    gap: var(--space-md);
+}
+
+/* Mobile: Stack vertically below 350px */
+@media (max-width: 349px) {
+    .toolbar {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+}
+
+/* Desktop: Move buttons to the right on 900px+ */
+@media (min-width: 900px) {
+    .toolbar {
+        justify-content: flex-end;
+        gap: var(--space-md);
+    }
+}
+
+/* Toolbar Dropdown Items */
+.toolbar .dropdown-item {
+    position: relative;
+    flex: 1;
+    min-width: 0; /* Prevent flex overflow */
+}
+
+@media (min-width: 900px) {
+    .toolbar .dropdown-item {
+        flex: none;
+        min-width: 150px;
+    }
 }
 
 /* Transparent Button Style */
@@ -263,12 +253,65 @@
     cursor: pointer;
     position: relative; /* For dropdown positioning */
     transition: background-color 0.3s;
+    width: 100%;
+    text-align: left;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
 }
 
 /* Hover/Active State = White Background */
 .tool-btn:hover, .tool-btn:focus {
     background-color: var(--color-white);
     color: var(--color-primary);
+}
+
+/* Toolbar Dropdown Menu Styling */
+.toolbar .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    padding: 8px 0;
+    min-width: 160px;
+    z-index: 100;
+    flex-direction: column;
+    gap: 0;
+    list-style: none;
+    margin-top: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    pointer-events: none;
+}
+
+/* Show dropdown on hover - keep pointer-events enabled */
+.toolbar .dropdown-item:hover .dropdown-menu {
+    display: flex;
+    pointer-events: auto;
+}
+
+/* Dropdown menu items */
+.toolbar .dropdown-menu li {
+    width: 100%;
+}
+
+.toolbar .dropdown-menu a {
+    display: block;
+    padding: 10px 16px;
+    color: var(--color-text-dark);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.toolbar .dropdown-menu a:hover {
+    background-color: var(--color-bg-muted);
+    color: var(--color-white);
 }
 
 /* ========================================

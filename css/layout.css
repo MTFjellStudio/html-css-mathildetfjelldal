@@ -491,29 +491,36 @@ footer {
     color: var(--color-white);
     font-family: var(--font-body);
     font-size: var(--font-size-sm);
-    padding: var(--space-lg) 0;
+    padding: var(--space-2lg) 0;
+    margin-top: 20%; /* Space above footer */
 }
 
 .footer-inner {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: var(--space-md);
-    padding: 0 var(--margin-page);
-    justify-content: space-between;
+    align-items: center; /* Centers everything for mobile */
+    text-align: center;  /* Centers text on mid-axis, otherwise the text is centered but left aligned. */
+    gap: var(--space-xl); /* Big spacing between sections */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px var(--margin-page);
 }
 
-.footer-nav {
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-md);
+    flex-direction: column; /* Mobile: Vertical Stack */
+    gap: var(--space-md);   /* Space between links */
 }
 
 .footer-nav a {
-    color: var(--color-white);
-    text-decoration: none;
-    transition: opacity var(--transition-fast);
+    color: var(--color-text-light);
+    text-decoration: underline;
+    text-underline-offset: 4px; /* Pushes underline down slightly for readability */
+    font-size: var(--font-size-base);
 }
 
 .footer-nav a:hover {
@@ -521,14 +528,28 @@ footer {
     color: var(--color-secondary-accent);
 }
 
-.footer-nav ul {
-    list-style: none;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
+.footer-icons {
     display: flex;
-    gap: var(--gutter-mobile);
-    flex-wrap: wrap;
+    flex-direction: row;
+    gap: var(--space-md); /* Space between icons */
+    font-size: var(--font-size-md);
+}
+
+.footer-icons a {
+    color: var(--color-white);
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.footer-icons a:hover {
+    color: var(--color-secondary-accent);
+    transform: scale(1.1);
+}
+
+.logo-footer img {
+    height: 64px;
+    width: auto;
+    filter: brightness(invert); /* Supposed to invert logo color, doesnt seem to be working. */
 }
 
 

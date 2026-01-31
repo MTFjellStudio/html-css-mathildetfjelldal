@@ -436,7 +436,7 @@
 .card-price-rating .price {
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-bold);
-    margin: 0;
+    padding: 8px 0;
     color: var(--color-white);
     background-color: var(--color-bg-muted);
 }

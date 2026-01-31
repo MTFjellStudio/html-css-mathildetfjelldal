@@ -376,21 +376,10 @@
     transition: background-color 0.2s ease;
 }
 
-/* Orange frame on hover effect - triggers on both card-media and card-footer */
-.card-media:hover,
-.card-footer:hover {
+.product-card:hover .card-media,
+.product-card:hover .card-footer {
     background-color: var(--color-primary);
-}
-
-/* If card-footer comes after card-media, turn it orange too when card-media is hovered */
-.card-media:hover ~ .card-footer {
-    background-color: var(--color-primary);
-}
-
-/* Full two-way hover: when either is hovered, both respond */
-.product-card:has(.card-media:hover) .card-footer,
-.product-card:has(.card-footer:hover) .card-media {
-    background-color: var(--color-primary);
+    transition: background-color 0.2s ease;
 }
 
 .product-card-link {
@@ -695,10 +684,6 @@
 /* ========================================
    REVIEW CARDS
    ======================================== */
-
-.product-bottom-section {
-    
-}
 
 .section-header h2 { /*Reviews header and More information header*/
     font-size: var(--font-size-h2);

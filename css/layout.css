@@ -622,6 +622,9 @@ footer {
     .home-grid {
         display: grid;
         grid-template-columns: 1fr 1fr; /* 2 columns */
+        grid-template-areas: 
+            "cats   feat2"
+            "feat1  promos";
         gap: var(--space-md);
     }
     
@@ -634,19 +637,49 @@ footer {
     .promo-grid {
         grid-column: 2;
     }
-    
-    /* Featured products span both columns below */
-    .featured-products {
-        grid-column: 1 / -1;
-        grid-row: 2;
-    }
 
-    .featured-products .featured-one {
+    .featured-one {
         grid-column: -2;
         grid-row: 1;
     }
+
+    .category-grid { grid-area: cats; }
+    .promo-grid    { grid-area: promos; }
+    .featured-one  { grid-area: feat1; }
+    .featured-two  { grid-area: feat2; }
 }
 
+
+/* ========================================
+   DESKTOP LAYOUT (900px+)
+   ======================================== */
+@media (min-width: 900px) {
+    
+    /* 1. Hide the Featured Products */
+    .product-card .featured-one,
+    .product-card.featured-two {
+        display: none;
+    }
+
+    /* 2. Update the Grid Map */
+    .home-grid {
+        display: grid;
+        gap: var(--space-lg);
+    }
+    
+    /* 3. Update the Category Grid */
+    .category-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; 
+        gap: var(--space-lg);
+    }
+
+    .shop-promos {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: var(--space-lg);
+    }
+}
 
 /* ========================================
    CATEGORY GRID LAYOUT
@@ -658,7 +691,7 @@ footer {
     /* If screen is super skinny (<350px), force 1 column so text fits */
     grid-template-columns: 1fr; 
     gap: var(--space-md);
-    margin-bottom: var(--space-3xl);
+    margin-bottom: 0;
     align-items: center; /* Vertically center items */
 }
 
@@ -685,7 +718,7 @@ footer {
     /* 1 Columns for 350px or wider up to 899px */
     grid-template-columns: 1fr; 
     gap: var(--space-md);
-    margin-bottom: var(--space-3xl);
+    margin-bottom: 0;
     align-items: center; /* Vertically center items */
     }
 }
@@ -717,7 +750,7 @@ footer {
     /* If screen is super skinny (<350px), force 1 column so text fits */
     grid-template-columns: 1fr; 
     gap: var(--space-md); 
-    margin-bottom: var(--space-3xl);
+    margin-bottom: 0;
 }
 
 /* STANDARD MOBILE (350px+) - Force side-by-side for promos */

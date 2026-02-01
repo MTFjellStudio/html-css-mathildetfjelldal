@@ -9,7 +9,7 @@
    DESKTOP DROPDOWN MENU 
    (Wrapped in desktop breakpoint so it won’t interfere on mobile)
    ======================================== */
-/*Consider making breakpoint 600 or 700? The Image for mobile becomes too blurry nd there is space on the header for desktop menu at smaller width.*/
+/*Consider making breakpoint 600 or 700? The Image for mobile becomes too blurry and there is space on the header for desktop menu at smaller width.*/
 @media (min-width: 900px) {
 
     .dropdown-item {
@@ -112,6 +112,16 @@
     background-color: var(--color-secondary); /* Orange */
 }
 
+.btn:focus {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.btn:active {
+    transform: scale(0.98);
+    background-color: var(--color-tertiary);
+}
+
 /* Narrow Button - Standard size */
 .btn-narrow {
     background-color: var(--color-primary); /* Orange */
@@ -131,6 +141,16 @@
     background-color: var(--color-secondary); /* Orange */
 }
 
+.btn-narrow:focus {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.btn-narrow:active {
+    transform: scale(0.98);
+    background-color: var(--color-tertiary);
+}
+
 /* Wide Button - Extra large for prominent CTAs like Pay Now */
 .btn-wide {
     padding: 16px 32px;
@@ -147,6 +167,16 @@
     
     /* SQUARE EDGES */
     border-radius: 0;
+}
+
+.btn-wide:focus {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.btn-wide:active {
+    transform: scale(0.98);
+    background-color: var(--color-tertiary);
 }
 
 /* ========================================
@@ -239,7 +269,7 @@
     gap: var(--space-md);
 }
 
-/* Mobile: Stack vertically below 350px */
+/* Mobile: Stack vertically below 450px */
 @media (max-width: 349px) {
     .toolbar {
         flex-direction: column;
@@ -380,6 +410,16 @@
 .product-card:hover .card-footer {
     background-color: var(--color-primary);
     transition: background-color 0.2s ease;
+}
+
+.product-card:focus {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.product-card:active {
+    transform: scale(0.98);
+    opacity: 0.95;
 }
 
 .product-card-link {
@@ -540,6 +580,11 @@
     .category-card:hover {
         border-color: var(--color-primary);
     }
+
+    .category-card:focus {
+        outline: 3px solid var(--color-primary);
+        outline-offset: 2px;
+    }
 }
 
 /* --- MOBILE INTERACTION (Touch) --- */
@@ -679,6 +724,12 @@
     border: none;
     text-align: center;
     font-weight: 600;
+    color: var(--color-text-dark);
+    background-color: var(--color-white);
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 40px;
+    font-size: var(--font-size-base);
 }
 
 /* ========================================

@@ -127,7 +127,7 @@
 
    /* Header icon sizing (mobile-first). Override on larger viewports in media queries. */
    :root {
-      --header-icon-size: 1rem; /* 16px default for mobile */
+      --header-icon-size: 1.25rem; /* 20px default for mobile */
    }
 
 /* ========================================

@@ -10,8 +10,8 @@
     margin: 0 16px; /* Default: 16px left/right margins */
 }
 
-/* Mobile variant (350px+) */
-@media (min-width: 350px) {
+/* Mobile variant (450px+) */
+@media (min-width: 450px) {
     .container {
         margin: 0 20px; /* 20px left/right margins */
     }
@@ -156,20 +156,37 @@ header {
 
 .header-icons {
     display: flex;
-    gap: var(--space-md);
+    gap: 0;
     align-items: center;
+    margin-left: -8px; /* Adjust for icon padding. A patchy solution perhaps, but it seems to work. */
 }
 
 .icon-link {
     font-size: var(--header-icon-size);
     color: var(--color-white);
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    margin-left: -4px;
     transition: transform var(--transition-fast);
 }
 
 .icon-link:hover {
-    color: var(--color-primary);
+    color: var(--color-secondary-accent);
     transform: scale(1.1);
+}
+
+.icon-link:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.icon-link:active {
+    transform: scale(0.95);
+    color: var(--color-secondary-accent);
 }
 
 /* --- DESKTOP HEADER OVERRIDES (900px+) --- */
@@ -186,7 +203,7 @@ header {
 }
     
     .header-icons {
-        gap: var(--space-lg);
+        gap: 0;
     }
 }
 
@@ -202,13 +219,17 @@ header {
 
 /* Hamburger icon label - styled as icon */
 .menu-toggle-label {
-    display: block;
-    font-size: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--header-icon-size);
     cursor: pointer;
     padding: 0;
     margin: 0;
     background: none;
     border: none;
+    min-width: 44px;
+    min-height: 44px;
     transition: transform var(--transition-fast);
 }
 
@@ -259,7 +280,16 @@ header {
 }
 
 .nav-list a:hover {
-    color: var(--color-primary);
+    color: var(--color-secondary-accent);
+}
+
+.nav-list a:focus {
+    outline: 2px solid var(--color-secondary-accent);
+    outline-offset: 2px;
+}
+
+.nav-list a:active {
+    color: var(--color-tertiary);
 }
 
 /* --- DESKTOP NAVIGATION OVERRIDES (900px+) --- */
@@ -351,6 +381,7 @@ details[open] summary i {
     display: flex;
     flex-direction: column;
     width: 100%;
+    overflow: hidden;
 }
 
 /* THE TEXT (Mobile: orange AUTUMN COLLECTION on top.) Hide other text on mobile, make image clickable. */
@@ -363,6 +394,8 @@ details[open] summary i {
     padding: var(--space-md);
     text-align: left;
     z-index: 2; /* Ensure text sits on top as a"button". */
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .hero-content:hover {
@@ -445,6 +478,8 @@ details[open] summary i {
         grid-column: 1 / -1;
         grid-row: 1 / -1;
         
+        margin-top: 0;
+        margin-bottom: 0;
         /* Reset Orange Bar styles */
         background-color: transparent;
         order: 0; /* Reset order */
@@ -618,35 +653,53 @@ footer {
    HOME-GRID LAYOUT - Parent grid of Category grid, Featured Products & Promo grid.
    ======================================== */
 
-@media (min-width: 350px) and (max-width: 899px) {
+@media (max-width: 449px) {
+    .home-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px; /* Space between left and right columns */
+    }
+
+    .left-column,
+    .right-column {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .right-column .promo-grid {
+        order: 1;
+    }
+
+    .right-column .featured-two {
+        order: 2;
+    }
+}
+
+@media (min-width: 450px) and (max-width: 899px) {
     .home-grid {
         display: grid;
         grid-template-columns: 1fr 1fr; /* 2 columns */
         grid-template-areas: 
-            "cats   feat2"
-            "feat1  promos";
+            "left   right";
         gap: var(--space-md);
     }
-    
-    /* Categories on left */
-    .category-grid {
-        grid-column: 1;
-    }
-    
-    /* Promos on right */
-    .promo-grid {
-        grid-column: 2;
+
+    .left-column {
+        grid-area: left;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 20px;
     }
 
-    .featured-one {
-        grid-column: -2;
-        grid-row: 1;
+    .right-column {
+        grid-area: right;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 20px;
     }
-
-    .category-grid { grid-area: cats; }
-    .promo-grid    { grid-area: promos; }
-    .featured-one  { grid-area: feat1; }
-    .featured-two  { grid-area: feat2; }
 }
 
 
@@ -656,7 +709,7 @@ footer {
 @media (min-width: 900px) {
     
     /* 1. Hide the Featured Products */
-    .product-card .featured-one,
+    .product-card.featured-one,
     .product-card.featured-two {
         display: none;
     }
@@ -688,7 +741,7 @@ footer {
 .category-grid {
     display: grid;
     /* TINY SCREENS (Safety Mode) */
-    /* If screen is super skinny (<350px), force 1 column so text fits */
+    /* If screen is super skinny (<450px), force 1 column so text fits */
     grid-template-columns: 1fr; 
     gap: var(--space-md);
     margin-bottom: 0;
@@ -711,11 +764,11 @@ footer {
     }
 } 
 
-/* STANDARD MOBILE (350px+) */
-@media (min-width: 350px) {
+/* STANDARD MOBILE (450px+) */
+@media (min-width: 450px) {
     .category-grid {
     display: grid;
-    /* 1 Columns for 350px or wider up to 899px */
+    /* 1 Columns for 450px or wider up to 899px */
     grid-template-columns: 1fr; 
     gap: var(--space-md);
     margin-bottom: 0;
@@ -747,14 +800,14 @@ footer {
 .promo-grid {
     display: grid;
     /* TINY SCREENS (Safety Mode) */
-    /* If screen is super skinny (<350px), force 1 column so text fits */
+    /* If screen is super skinny (<450px), force 1 column so text fits */
     grid-template-columns: 1fr; 
     gap: var(--space-md); 
     margin-bottom: 0;
 }
 
-/* STANDARD MOBILE (350px+) - Force side-by-side for promos */
-@media (min-width: 350px) {
+/* STANDARD MOBILE (450px+) - Force side-by-side for promos */
+@media (min-width: 450px) {
     .promo-grid {
         grid-template-columns: 1fr; /* 1 column to stack vertically */
     }
@@ -778,15 +831,15 @@ footer {
 .product-grid {
     display: grid;
     /* TINY SCREENS (Safety Mode) */
-    /* If screen is super skinny (<350px), force 1 column so text fits */
+    /* If screen is super skinny (<450px), force 1 column so text fits */
     grid-template-columns: 1fr; 
     gap: var(--space-md); 
     margin-bottom: var(--space-3xl);
     /* Removed margin: 16px; */
 }
 
-/* STANDARD MOBILE (350px+) */
-@media (min-width: 350px) {
+/* STANDARD MOBILE (450px+) */
+@media (min-width: 450px) {
     .product-grid {
         grid-template-columns: repeat(2, 1fr); /* The standard 2-col view */
         /* Removed margin: 20px; */

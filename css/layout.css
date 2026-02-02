@@ -994,30 +994,50 @@ footer {
    CART PAGE LAYOUT
    ======================================== */
 
-.cart-layout {
-    display: flex;
-    flex-direction: column; /* Mobile First: Stacked */
-    gap: var(--space-xl);
+.cart-body {
+    background-color: var(--color-bkg-boxes);
+    padding: var(--space-md);
+    border-radius: 0;
 }
 
+.cart-layout {
+    background-color: var(--color-white);
+    padding: var(--space-md);
+    flex: auto;
+    flex-direction: row;
+}
+
+.cart-media img {
+        width: 100px; /* Thumbnail size. Change to more flexible size and add a minimum cap? */
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        object-position: top; /* This focuses on the top of the image when a square crop. Consider for desktop variant as well? */
+    }
+
 @media (min-width: 900px) {
+    .cart-body {
+        background-color: transparent;
+        padding: 0;
+    }
+
     .cart-layout {
         display: grid;
         grid-template-columns: 2fr 1fr;
     }
-}
 
-.cart-tile {
+    .cart-tile {
     display: flex;
     gap: var(--space-md);
     padding: var(--space-md) 0;
+    }
+
+    .cart-media img {
+        width: 100px; /* Thumbnail size. Change to more flexible size and add a minimum cap? */
+        aspect-ratio: 3/4;
+        object-fit: cover;
+    }
 }
 
-.cart-media img {
-    width: 100px; /* Thumbnail size. Change to more flexible size and add a minimum cap? */
-    aspect-ratio: 3/4;
-    object-fit: cover;
-}
 
 /* ========================================
    CHECKOUT PAGE LAYOUT - With an accordion for Info, Shipping and Payment.

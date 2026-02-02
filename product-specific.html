@@ -242,18 +242,18 @@
                                     </div>
                                 </fieldset>
 
-                                <div class="form-actions">
-                                    <label for="quantity" class="sr-only">Quantity</label>
-                                    <div class="quantity-selector">
-                                        <button type="button" aria-label="Decrease quantity">-</button>
-                                        <input type="number" id="quantity" name="quantity" value="1" min="1">
-                                        <button type="button" aria-label="Increase quantity">+</button>
+                                <fieldset class="form-row quantity-row">
+                                    <legend>Quantity</legend>
+                                    <div class="form-actions">
+                                        <div class="quantity-selector">
+                                            <button type="button" aria-label="Decrease quantity">-</button>
+                                            <input type="number" id="quantity" name="quantity" value="1" min="1" aria-label="Quantity">
+                                            <button type="button" aria-label="Increase quantity">+</button>
+                                        </div>
                                     </div>
-                                    
-                                    <a href="cart.html" class="btn-narrow">Add to Cart</a>
-                                </div>
-
+                                </fieldset>
                             </form>
+                            <a href="cart.html" class="btn-narrow">Add to Cart</a>
                         </div>
                     </div>
                 </div>

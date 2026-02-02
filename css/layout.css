@@ -341,7 +341,7 @@ details > summary {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: var(--font-size-md); /* Matches your nav links */
+    font-size: var(--font-size-md); /* Matches nav link size */
     font-weight: 500;
     padding: 10px 0; /* Gives it a button feel */
 }
@@ -420,6 +420,7 @@ details[open] summary i {
     position: relative; /* For the price tag */
     width: 100%;
 }
+
 
 .hero-media img { /* This is to make sure the image scales with the screen width. */
     width: 100%;
@@ -513,6 +514,20 @@ details[open] summary i {
     .hero-content p {
         font-size: 1.5rem;
         margin-bottom: 2rem;
+    }
+
+    .hero-media::after { /*This is the dark overlay effect on the image. I only added on desktop though, for hover. */
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        opacity: 1;
+        transition: opacity var(--transition-fast);
+        pointer-events: none;
+    }
+
+    .hero-banner:has(.hero-text-link:hover) .hero-media::after {
+        opacity: 0;
     }
 }
 
@@ -1192,7 +1207,7 @@ input {
 
 /* Typography Tweaks */
 .success-message h1 {
-    font-size: var(--font-size-h1); /* Uses your mobile/desktop responsive token [2, 3] */
+    font-size: var(--font-size-h1); /* Uses mobile/desktop responsive token [2, 3] */
     margin: 0;
 }
 

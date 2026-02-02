@@ -142,7 +142,7 @@
       --font-size-h3: 1.5rem;  /* Jumps from 20px -> 24px */
 
       /* Scale up Spacing for Desktop */
-      /* This makes your layout "breathe" more on big screens 
+      /* This makes the layout "breathe" more on big screens 
          without changing layout.css */
       --space-xl: 40px; 
       --space-2xl: 64px; 

@@ -183,6 +183,26 @@
     background-color: var(--color-tertiary);
 }
 
+
+/* Remove Button - Shows an "X" icon */
+.btn-remove {
+    background: none;
+    border: none;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--color-text-dark);
+}
+
+.btn-remove:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+
 /* ========================================
    DROPDOWNS
    ======================================== */
@@ -817,11 +837,16 @@
    ======================================== */
 
 .cart-list {
-    
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
 }
 
 .cart-tile {
-    
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: var(--space-md) 0;
 }
 
 @media (min-width: 900px) {

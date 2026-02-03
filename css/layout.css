@@ -2,25 +2,21 @@
    LAYOUT.CSS - HEADER & TOPBAR
    ======================================= */
 
-/* ========================================
-   UNIVERSAL CONTAINER FOR MAIN CONTENT - Use padding instead?
-   ======================================== */
+/* UNIVERSAL CONTAINER */
 
 .container {
-    margin: 0 16px; /* Default: 16px left/right margins */
+    margin: 0 16px;
 }
 
-/* Mobile variant (450px+) */
 @media (min-width: 450px) {
     .container {
-        margin: 0 20px; /* 20px left/right margins */
+        margin: 0 20px;
     }
 }
 
-/* Desktop variant (900px+) */
 @media (min-width: 900px) {
     .container {
-        margin: 0 80px; /* 80px left/right margins */
+        margin: 0 80px;
     }
 }
 
@@ -29,7 +25,7 @@
    ======================================== */
 
 .topbar {
-    display: none;  /* Hidden on mobile */
+    display: none;
     background-color: var(--color-primary-dark);
     color: var(--color-white);
     font-family: var(--font-body);
@@ -37,18 +33,16 @@
     padding: var(--space-xs) 0;
 }
 
-/* Topbar inner content alignment */
 .topbar-inner {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: var(--gutter-mobile);
     padding: 0 var(--margin-page);
-    width: 100%;  /* Ensure full width */
-    margin-left: 0;  /* Prevent default margin issues */
+    width: 100%;
+    margin-left: 0;
 }
 
-/* Top navigation links */
 .top-nav ul {
     list-style: none;
     padding: 0;
@@ -68,7 +62,6 @@
     opacity: 0.8;
 }
 
-/* Country selector */
 .country-select {
     display: flex;
     align-items: center;
@@ -102,9 +95,7 @@
     color: var(--color-white);
 }
 
-/* --- DESKTOP TOPBAR OVERRIDES (900px+) --- */
 @media (min-width: 900px) {
-    /* Show topbar on desktop */
     .topbar {
         display: flex;
     }
@@ -138,7 +129,6 @@ header {
     gap: var(--gutter-mobile);
 }
 
-/* Logo */
 .logo {
     flex-shrink: 0;
     display: flex;
@@ -146,7 +136,7 @@ header {
 }
 
 .logo img {
-    height: 60px; /* Changed from 40px */
+    height: 60px;
     width: auto;
 }
 
@@ -158,7 +148,7 @@ header {
     display: flex;
     gap: 0;
     align-items: center;
-    margin-left: -8px; /* Adjust for icon padding. A patchy solution perhaps, but it seems to work. */
+    margin-left: -8px;
 }
 
 .icon-link {
@@ -189,16 +179,14 @@ header {
     color: var(--color-secondary-accent);
 }
 
-/* --- DESKTOP HEADER OVERRIDES (900px+) --- */
 @media (min-width: 900px) {
-    /* Adjust header spacing on desktop */
     .header-inner {
         padding: var(--space-lg) var(--margin-page);
         gap: var(--space-lg);
     }
 
     .logo img {
-    height: 90px; /* Changed from 50px */
+    height: 90px;
     width: auto;
 }
     

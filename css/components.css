@@ -6,10 +6,8 @@
 
 
 /* ========================================
-   DESKTOP DROPDOWN MENU 
-   (Wrapped in desktop breakpoint so it won’t interfere on mobile)
+   DESKTOP DROPDOWN MENU
    ======================================== */
-/*Consider making breakpoint 600 or 700? The Image for mobile becomes too blurry and there is space on the header for desktop menu at smaller width.*/
 @media (min-width: 900px) {
 
     .dropdown-item {
@@ -92,24 +90,21 @@
    BUTTONS
    ======================================== */
 
-/* Base Button Style */
 .btn {
-    background-color: var(--color-primary); /* Orange */
+    background-color: var(--color-primary);
     color: var(--color-white);
     border: none;
     padding: 12px 24px;
     font-weight: var(--font-weight-bold);
     text-transform: uppercase;
-    text-decoration: none; /* Removes the line */
+    text-decoration: none;
     cursor: pointer;
     transition: background-color 0.2s;
-    
-    /* SQUARE EDGES */
     border-radius: 0;
 }
 
 .btn:hover {
-    background-color: var(--color-secondary); /* Orange */
+    background-color: var(--color-secondary);
 }
 
 .btn:focus {
@@ -122,26 +117,24 @@
     background-color: var(--color-tertiary);
 }
 
-/* Narrow Button - Standard size */
+/* Narrow Button */
 .btn-narrow {
     display: block;
     width: 100% ;
     padding: 8px 8px;
-    background-color: var(--color-primary); /* Orange */
+    background-color: var(--color-primary);
     color: var(--color-white);
     border: none;
-    text-decoration: none; /* Removes the line */
+    text-decoration: none;
     text-align: center;
     font-weight: var(--font-weight-medium);
     cursor: pointer;
     transition: background-color 0.2s;
-    
-    /* SQUARE EDGES */
     border-radius: 0;
 }
 
 .btn-narrow:hover {
-    background-color: var(--color-white); /* White */
+    background-color: var(--color-white);
     color: var(--color-text-dark);
 }
 
@@ -155,21 +148,19 @@
     background-color: var(--color-tertiary);
 }
 
-/* Wide Button - Extra large for prominent CTAs like Pay Now */
+/* Wide Button */
 .btn-wide {
     padding: 16px 32px;
     font-weight: 700;
     font-size: 1.25rem;
-    background-color: var(--color-primary); /* Orange */
+    background-color: var(--color-primary);
     color: var(--color-white);
     border: none;
     font-weight: var(--font-weight-bold);
     text-transform: uppercase;
-    text-decoration: none; /* Removes the line */
+    text-decoration: none;
     cursor: pointer;
     transition: background-color 0.2s;
-    
-    /* SQUARE EDGES */
     border-radius: 0;
 }
 
@@ -214,7 +205,6 @@
 .product-details-accordion {
     display: flex;
     flex-direction: column;
-    /* Optional: spacing between the green bars */
     gap: 1px; 
 }
 
@@ -234,7 +224,7 @@
     text-transform: uppercase;
     font-size: 0.9rem;
     transition: all 0.3s ease;
-    border: 1px solid transparent; /* To prevent jumping on hover */
+    border: 1px solid transparent;
 }
 
 /* Removes default browser marker */
@@ -245,14 +235,13 @@
 .info-item summary:hover {
     background-color: var(--color-white);
     color: var(--color-text-dark);
-    border-color: var(--color-secondary); /* Add border so it doesn't disappear */
+    border-color: var(--color-secondary);
 }
 
-/* This is the open state: Keeps white background and black text for reading like on hover. */
 .info-item[open] summary {
     background-color: var(--color-white);
     color: var(--color-text-dark);
-    border-bottom: 1px solid transparent; /* Connects smoothly to content */
+    border-bottom: 1px solid transparent;
 }
 
 /* --- icon animation on click --- */
@@ -267,12 +256,10 @@
 
 .info-content {
     padding: 16px 20px;
-    background-color: var(--color-white); /* White background for reading */
+    background-color: var(--color-white);
     color: var(--color-text-dark);
     font-size: 0.9rem;
     line-height: 1.6;
-    
-    /* Adds a subtle border to frame the content, although it might be removed and a shadow added instead. */
     border: 1px solid var(--color-bg-muted); 
     border-top: none; /* Merges with the header */
 }
@@ -288,7 +275,7 @@
    
 .toolbar {
     display: flex;
-    justify-content: space-between; /* Pushes Filter left, Sort right */
+    justify-content: space-between;
     margin-bottom: var(--space-lg);
     gap: var(--space-md);
 }
@@ -309,11 +296,10 @@
     }
 }
 
-/* Toolbar Dropdown Items */
 .toolbar .dropdown-item {
     position: relative;
     flex: 1;
-    min-width: 0; /* Prevent flex overflow */
+    min-width: 0;
 }
 
 @media (min-width: 900px) {
@@ -326,10 +312,10 @@
 /* Transparent Button Style */
 .tool-btn {
     background-color: transparent;
-    border: 1px solid var(--color-text-dark); /* Optional border */
+    border: 1px solid var(--color-text-dark);
     padding: 8px 16px;
     cursor: pointer;
-    position: relative; /* For dropdown positioning */
+    position: relative;
     transition: background-color 0.3s;
     width: 100%;
     text-align: left;
@@ -341,7 +327,6 @@
     gap: 8px;
 }
 
-/* Hover/Active State = White Background */
 .tool-btn:hover, .tool-btn:focus {
     background-color: var(--color-white);
     color: var(--color-primary);
@@ -367,7 +352,6 @@
     pointer-events: none;
 }
 
-/* Show dropdown on hover - keep pointer-events enabled */
 .toolbar .dropdown-item:hover .dropdown-menu {
     display: flex;
     pointer-events: auto;
@@ -404,7 +388,7 @@
     cursor: pointer;
     text-decoration: none;
     color: inherit;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     
     /* To ensure the card itself acts as a hover trigger */
     cursor: pointer;
@@ -415,19 +399,11 @@
 /* GREEN FRAME */
 .card-media {
     background-color: var(--color-secondary);
-    
-    /* PADDING: 16px Top/Left/Right, 0 Bottom */
     padding: 16px 16px 0 16px;
-    
-    /* Force exact 3:4 Portrait Ratio */
     aspect-ratio: 3 / 4;
     width: 100%;
-    
-    /* Layout */
-    /* Removed 'align-items' so the image isn't pushed down.
-    I want the image to stretch to the full height of the inner area, which align-items seemed to be preventing. */
     display: flex; 
-    overflow: hidden; /* Crops any image spillover */
+    overflow: hidden;
     transition: background-color 0.2s ease;
 }
 
@@ -448,27 +424,21 @@
 }
 
 .product-card-link {
-    display: block; /* Ensures the link fills the card */
+    display: block;
     text-decoration: none;
     color: inherit;
-    height: 100%; /* Ensures uniform height if I use flexbox on parent */
+    height: 100%; /* Ensures the link fills the card */
 }
 
-/* THE IMAGE INSIDE. I need to give it a crop of some kind. */
 .card-media img {
     display: block; /* Forces the image to fill the container completely */
     height: 100%;
     width: 100%;
-    object-fit: cover; /* Ensures the image scales down inside the frame without cropping! Have to check if the margin can be switched, or switch to desktop variant. */
+    object-fit: cover;
     aspect-ratio: 3 / 4;
-    /* MANUAL PLACEMENT: To "move" the image.
-       'center top' = Focus on top (heads).
-       'center center' = Focus on middle.
-       'center 20%' = Focus 20% down from the top. */
     object-position: center top; 
 }
 
-/* THE TEXT */
 .card-info {
     display: flex;
     flex-direction: column;
@@ -479,7 +449,6 @@
     margin: 8px;
 }
 
-/* Typography clean-up */
 .card-title h3 {
     font-family: var(--font-body);
     font-size: var(--font-size-base);
@@ -504,9 +473,6 @@
     background-color: var(--color-secondary);
 }
 
-
-
-/* Desktop override for card (moved from layout.css + fixed selector compatibility) */
 @media (min-width: 900px) {
 
     .card-media {
@@ -533,52 +499,45 @@
 }
 
 /* ========================================
-   FEATURED CATEGORY CARD - MOBILE FIRST, but switches on desktop.
+   FEATURED CATEGORY CARD
    ======================================== */
 
 .category-card {
     display: block;
     text-decoration: none;
     position: relative;
-    
-    /* I wanted to try this for the border effect, but still figuring out the border distance. */
     border: 16px solid transparent; 
     transition: all 0.5s ease;
 }
 
-/* --- MOBILE STATE (Default) --- */
-
-/* Hide the Image */
 .category-card .card-bg {
     display: none; 
 }
 
-/* Style the Link itself to look like a button container. Question is, how do I make the button for mobile but clickable text on image for desktop? */
 .category-card {
     background-color: transparent; 
     text-align: center;
 }
 
-/* Styles the inner .btn to fill the space */
 .category-card .btn {
     display: block;
     width: 100%;
-    /* On mobile, removes absolute positioning */
     position: static; 
     transform: none;
     margin: 0;
 }
 
-/* --- DESKTOP STATE (900px+) --- */
+.category-card:active .btn {
+    background-color: var(--color-secondary);
+}
+
 @media (min-width: 900px) {
 
     .category-card {
-        /* Forced rectangle shape, landscape ratio instead of portrait like the product cards. */
-        aspect-ratio: 4 / 3; 
+        aspect-ratio: 4 / 3; /* Wider aspect ratio for desktop. More wide than this? */
         overflow: hidden;
     }
 
-    /* Show Image */
     .category-card .card-bg {
         display: block;
         width: 100%;
@@ -587,21 +546,17 @@
         transition: transform 0.5s ease;
     }
 
-    /* 2. Position the Button on top of image and remove button background. */
     .category-card .btn {
-        background-color: transparent; /* Remove button background */
-        font-size: var(--font-size-h2); /* Make text larger */
+        background-color: transparent;
+        font-size: var(--font-size-h2);
         font-weight: var(--font-weight-medium);
         position: absolute;
         bottom: 20px;
         left: 16px;
-        width: auto; /* Let text define width */
+        width: auto;
         min-width: 140px;
     }
 
-    /* --- HOVER EFFECT --- */
-
-    /* Orange Border (Uses the transparent border, although I would like to find a more straight forward way if possible.) */
     .category-card:hover {
         border-color: var(--color-primary);
     }
@@ -612,24 +567,17 @@
     }
 }
 
-/* --- MOBILE INTERACTION (Touch) --- */
-/* Change color on button click. */
-.category-card:active .btn {
-    background-color: var(--color-secondary);
-}
 
 /* ========================================
    PRODUCT FORMS & INPUTS
    ======================================== */
 
-/* RESET FIELDSETS (Remove ugly browser defaults) */
 .form-row {
     border: none;
     padding: 8px 0;
-    margin: 0 0 var(--space-md) 0; /* Add bottom spacing */
+    margin: 0 0 var(--space-md) 0;
 }
 
-/* Style Legend to look like a label */
 .form-row legend {
     font-weight: 600;
     margin-bottom: 8px;
@@ -643,12 +591,11 @@
     margin-bottom: 4px;
 }
 
-
 .color-options,
 .size-options {
-    display: flex; /* This makes the buttons sit in a row */
-    gap: 4px;     /* Space between buttons */
-    flex-wrap: wrap; /* Allow wrapping on tiny screens */
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
 }
 
 /* ========================================
@@ -661,14 +608,12 @@
     height: 44px;
     border-radius: 0%;
     cursor: pointer;
-    border: 1px solid var(--color-border); /* Subtle border for light colors */
+    border: 1px solid var(--color-border);
 }
 
-/* Modifiers for Colors */
 .color-radio.black { background-color: var(--color-primary-dark); }
 .color-radio.green { background-color: var(--color-secondary); }
 
-/* Hide the actual radio button */
 .color-radio input[type="radio"] {
     position: absolute;
     opacity: 0;
@@ -676,7 +621,6 @@
     cursor: pointer;
 }
 
-/* Selected State (Orange Ring) */
 .color-radio:has(input:checked) {
     border-color: var(--color-primary); 
     box-shadow: 0 0 0 2px var(--color-white) inset; 
@@ -698,28 +642,25 @@
     cursor: pointer;
 }
 
-/* Style the Label as the Box */
 .size-box label {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 44px;
     height: 44px;
-    background-color: var(--color-bkg-boxes); /* Light gray */
+    background-color: var(--color-bkg-boxes);
     color: var(--color-text-dark);
-    font-weight: var(--font-weight-medium); /*Makes the text more or less bold*/
+    font-weight: var(--font-weight-medium);
     font-size: var(--font-size-base);
     cursor: pointer;
     transition: background-color 0.5s;
 }
 
-/* Selected State */
 .size-box input:checked + label {
-    background-color: var(--color-primary); /* Orange */
+    background-color: var(--color-primary);
     color: var(--color-white);
 }
 
-/* Hover State */
 .size-box label:hover {
     color: var(--color-text-light);
     background-color: var(--color-secondary);
@@ -772,14 +713,14 @@
    REVIEW CARDS
    ======================================== */
 
-.section-header h2 { /*Reviews header and More information header*/
+.section-header h2 {
     font-size: var(--font-size-h2);
     font-weight: var(--font-weight-bold);
 }
 
 .reviews-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Mobile: Stacked 1 column */
+    grid-template-columns: 1fr;
     gap: var(--space-md);
 }
 
@@ -896,7 +837,7 @@
 
 .progress-container {
     width: 100%;
-    margin: 0 auto var(--space-xl) auto; /* Center it */
+    margin: 0 auto var(--space-xl) auto;
     padding: 0 var(--space-md);
     }
 
@@ -912,7 +853,7 @@
 @media (min-width: 900px) {
     .progress-container {
     width: 100%;
-    margin: 0 auto var(--space-xl) auto; /* Center it */
+    margin: 0 auto var(--space-xl) auto;
     padding: 0 var(--space-md);
     }
 
@@ -937,7 +878,7 @@
     flex-direction: column;
     gap: 1rem;
     width: 100%;
-    max-width: 400px; /* Prevents it from getting too wide on tablets */
+    max-width: 400px;
 }
 
 /* Headings */
@@ -953,37 +894,27 @@
     opacity: 0.9;
 }
 
-/* Form Layout */
 .newsletter-form .form-group {
     display: flex;
-    flex-direction: column; /* Mobile: Stack input and button */
+    flex-direction: column;
     gap: 10px;
 }
 
-/* The Input Field */
 .newsletter-form input {
     width: 100%;
     padding: 12px 16px;
-    
-    /* STYLE: Transparent with White Border */
     background: transparent;
     border: 1px solid var(--color-white);
     color: var(--color-white);
-    
     font-family: var(--font-body);
     font-size: 1rem;
-    
-    /* SQUARE EDGES */
     border-radius: 0;
 }
 
-/* Placeholder text color */
 .newsletter-form input::placeholder {
     color: rgba(255, 255, 255, 0.7);
 }
 
-
-/* Legal Text */
 .legal-text {
     font-size: 0.75rem;
     opacity: 0.8;
@@ -1001,22 +932,14 @@
    DESKTOP ADJUSTMENTS (900px+)
    ======================================== */
 @media (min-width: 900px) {
-    
-    /* Switch to side-by-side layout */
     .newsletter-form .form-group {
-        flex-direction: row; 
-        gap: 0; /* Removes gap so they touch */
+        flex-direction: column;
+        gap: 10px;
     }
 
-    /* Make the input take available space */
     .newsletter-form input {
-        border-right: none; /* Remove right border where they touch */
-        flex: 1;
-    }
-
-    /* Button sits attached to the input */
-    .btn-subscribe {
-        flex-shrink: 0; /* Don't let the button shrink */
+        border: 1px solid var(--color-white);
+        width: 100%;
     }
 }
 

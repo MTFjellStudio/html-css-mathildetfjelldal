@@ -4,7 +4,7 @@
     <title>Rainy Days</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta charset="utf-8" />
-    <meta name="description" content="RainyDays-Pushing-the-comfort-zone." />
+    <meta name="description" content="Browse RainyDays womens jackets built for outdoor performance and everyday comfort.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="images/rainy-days-logo/favicon.ico">
     <link rel="stylesheet" href="css/tokens.css">
@@ -17,7 +17,6 @@
   <body>
     <a class="skip-link" href="#main">Skip to content</a> 
     
-    <!-- TOP BAR: Desktop-only (Login, Blog, Support, Country) -->
     <div class="topbar">
         <div class="topbar-inner">
             <nav class="top-nav">
@@ -41,15 +40,11 @@
         </div>
     </div>
 
-    <!-- MAIN HEADER: Logo, Navigation, Icons -->
     <header>
         <div class="header-inner">
             <a href="index.html" class="logo">
                 <picture>
-                    <!-- DESKTOP: Shows the full logo with text on screens 900px+ -->
                     <source media="(min-width: 900px)" srcset="images/rainy-days-logo/rainy-days-logo.png">
-                    
-                    <!-- MOBILE: Shows only the symbol/icon on smaller screens -->
                     <img src="images/rainy-days-logo/rainy-days-logo(1).png" alt="Rainy Days Logo">
                 </picture>
             </a>
@@ -97,30 +92,20 @@
             </nav>
 
             <div class="header-icons">
-                <!-- Desktop Icons -->
                 <a href="#search" class="icon-link" aria-label="Search products"><i class="fa-solid fa-magnifying-glass"></i></a>
                 <a href="#wishlist" class="icon-link" aria-label="Open wishlist"><i class="fa-solid fa-heart"></i></a>
                 <a href="#share" class="icon-link" aria-label="Share this page"><i class="fa-solid fa-share-nodes"></i></a>
                 <a href="cart.html" class="icon-link" aria-label="View shopping cart"><i class="fa-solid fa-cart-shopping"></i></a>
 
-                <!-- THE TRIGGER: This label is the actual "Button" users click for the HAMBURGER MENU. -->
                 <label for="menu-toggle" class="menu-toggle-label icon-link" aria-label="Toggle navigation menu">
                     <i class="fa-solid fa-bars"></i>
                 </label>
             </div>
-        </div> <!-- Closes .header-inner -->
-
-        <!-- THE STATE: This checkbox controls the show/hide logic -->
-        <!-- Must match the ID in the label above ('menu-toggle') -->
+        </div>
         <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
-
-        <!-- REMOVE THE EXTRA <label class="hamburger"> BLOCK HERE -->
-
-        <!-- THE CONTENT: The Mobile Menu itself -->
         <nav class="main-nav-mobile" aria-label="Mobile navigation">
             <ul class="nav-list-mobile">
                 <li>
-                    <!-- Uses <details> for mobile "click" dropdowns -->
                     <details class="mobile-dropdown">
                         <summary>Women <i class="fa-solid fa-chevron-down"></i></summary>
                         <ul class="mobile-sub-menu">

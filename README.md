@@ -8,5 +8,3 @@ Description: A responsive e-commerce website for outdoor rain gear, built using 
 
 Built With: HTML5, CSS3 (Flexbox, CSS Grid, CSS Variables).
 
-## Links
-

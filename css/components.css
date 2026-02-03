@@ -393,11 +393,12 @@
 }
 
 /* ========================================
-   PRODUCT CARD (Mobile First)
+   PRODUCT CARDS
    ======================================== */
 
 .product-card {
     display: flex;
+    flex: 1;
     flex-direction: column;
     gap: 4px;
     cursor: pointer;

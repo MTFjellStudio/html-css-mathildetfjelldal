@@ -451,7 +451,22 @@
 
 .card-title h3 {
     font-family: var(--font-body);
+    position: relative;
     font-size: var(--font-size-base);
+
+@media (max-width: 449px) {
+    .cart-controls {
+        padding-right: 44px;
+    }
+
+    .cart-controls .btn-remove {
+        position: absolute;
+        top: var(--space-sm);
+        right: 0;
+        width: 44px;
+        height: 44px;
+    }
+}
     font-weight: var(--font-weight-heading);
     margin: 4px;
 }
@@ -543,22 +558,41 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        position: relative;
+        z-index: 0;
         transition: transform 0.5s ease;
+    }
+
+    .category-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        opacity: 1;
+        transition: opacity var(--transition-fast);
+        pointer-events: none;
+        z-index: 1;
     }
 
     .category-card .btn {
         background-color: transparent;
-        font-size: var(--font-size-h2);
+        font-size: var(--font-size-h3);
         font-weight: var(--font-weight-medium);
         position: absolute;
         bottom: 20px;
         left: 16px;
         width: auto;
-        min-width: 140px;
+        min-width: 120px;
+        z-index: 2;
     }
 
     .category-card:hover {
         border-color: var(--color-primary);
+    }
+
+    .category-card:hover::after,
+    .category-card:focus-within::after {
+        opacity: 0;
     }
 
     .category-card:focus {
@@ -781,20 +815,28 @@
 .cart-list {
     display: flex;
     flex-direction: column;
-    gap: var(--space-md);
 }
 
 .cart-tile {
+    background-color: var(--color-white);
     display: flex;
     flex-direction: column;
     gap: var(--space-md);
     padding: var(--space-md) 0;
 }
 
+@media (min-width: 450px) and (max-width: 899px) {
+    .cart-tile {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+    }
+}
+
 @media (min-width: 900px) {
     .cart-list {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: var(--space-md);
     }
 

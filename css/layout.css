@@ -521,7 +521,7 @@ details[open] summary i {
    ======================================== */
 
 footer {
-    background-color: var(--color-secondary);
+    background-color: var(--color-tertiary);
     color: var(--color-white);
     font-family: var(--font-body);
     font-size: var(--font-size-sm);
@@ -716,20 +716,20 @@ footer {
     /* 2. Update the Grid Map */
     .home-grid {
         display: grid;
-        gap: var(--space-lg);
+        gap: var(--space-md);
     }
     
     /* 3. Update the Category Grid */
     .category-grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr; 
-        gap: var(--space-lg);
+        gap: var(--space-md);
     }
 
     .shop-promos {
         display: grid;
         grid-template-columns: 1fr 1fr; 
-        gap: var(--space-lg);
+        gap: var(--space-md);
     }
 }
 
@@ -780,7 +780,7 @@ footer {
     .category-grid {
         /* 3 Columns */
         grid-template-columns: 1fr 1fr 1fr;
-        gap: var(--space-lg);
+        gap: var(--space-md);
     }
 
     /* Reset Slogan to take just 1 column */
@@ -817,7 +817,7 @@ footer {
 @media (min-width: 900px) {
     .promo-grid {
         grid-template-columns: repeat(2, 1fr); /* Switch to 3 columns */
-        gap: var(--space-lg); /* Bigger gaps */
+        gap: var(--space-md);
     }
 }   
 
@@ -995,23 +995,48 @@ footer {
 
 .cart-body {
     background-color: var(--color-bkg-boxes);
-    padding: var(--space-md);
     border-radius: 0;
 }
 
 .cart-layout {
-    background-color: var(--color-white);
-    padding: var(--space-md);
     flex: auto;
     flex-direction: row;
 }
 
+.cart-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.continue-shopping {
+    display: block;
+    text-align: center;
+    margin-top: var(--space-xs);
+    color: var(--color-text-dark);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 .cart-media img {
-        width: 100px; /* Thumbnail size. Change to more flexible size and add a minimum cap? */
+        width: 100px;
         aspect-ratio: 1/1;
         object-fit: cover;
-        object-position: top; /* This focuses on the top of the image when a square crop. Consider for desktop variant as well? */
+        object-position: top; /* This focuses on the top of the image when a square c12rop. Consider for desktop variant as well? */
     }
+
+.continue-shopping:hover,
+.continue-shopping:focus {
+    color: var(--color-primary);
+}
+
+.safe-checkout-icons {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+    font-weight: var(--font-weight-bold);
+}
+
 
 @media (min-width: 900px) {
     .cart-body {
@@ -1022,12 +1047,6 @@ footer {
     .cart-layout {
         display: grid;
         grid-template-columns: 2fr 1fr;
-    }
-
-    .cart-tile {
-    display: flex;
-    gap: var(--space-md);
-    padding: var(--space-md) 0;
     }
 
     .cart-media img {
@@ -1117,6 +1136,10 @@ input {
     border: 1px solid var(--color-border);
 }
 
+.summary-card h2 {
+    display: none;
+}
+
 .mini-cart-item {
     display: flex;
     gap: 12px;
@@ -1134,6 +1157,10 @@ input {
    DESKTOP LAYOUT (900px+)
    ======================================== */
 @media (min-width: 900px) {
+    .summary-card h2 {
+        display: block;
+    }
+
     .checkout-layout {
         display: grid;
         grid-template-columns: 2fr 1fr; /* Forms take 2/3, Summary takes 1/3 */

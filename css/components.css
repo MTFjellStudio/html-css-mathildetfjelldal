@@ -877,7 +877,7 @@
    PROGRESS BAR
    ======================================== */
 
-.progress-container {
+    .progress-container {
     width: 100%;
     margin: 0 auto var(--space-xl) auto;
     padding: 0 var(--space-md);
@@ -889,8 +889,50 @@
         justify-content: space-between;
         position: relative;
         padding: 0;
-        list-style: none;
     }
+
+    .progress-bar::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 10px; /* half of circle height. Change to center if circle size changes? */
+        height: 2px;
+        background: var(--color-secondary);
+    }
+
+    .step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-weight: var(--font-weight-bold);
+    }
+
+    .step-circle {
+        width: 20px;
+        height: 20px;
+        background-color: var(--color-secondary);
+        border-radius: 50%;
+        margin-bottom: var(--space-md);
+        font-size: 0;
+        line-height: 0;
+    }
+
+    .step-circle-active {
+        width: 20px;
+        height: 20px;
+        background-color: var(--color-primary);
+        border-radius: 50%;
+        margin-bottom: var(--space-md);
+        font-size: 0;
+        line-height: 0;
+    }
+
+    .step-label {
+        font-size: var(--font-size-xs);
+        color: var(--color-text-dark);
+    }
+
 
 @media (min-width: 900px) {
     .progress-container {

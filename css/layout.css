@@ -994,16 +994,16 @@ footer {
    ======================================== */
    
 .cart-body {
-    background-color: var(--color-bkg-boxes);
-    border-radius: 0;
+    border-radius: 0px;
+    
 }
 
 .cart-layout {
-    flex: auto;
-    flex-direction: row;
+    display: grid;
+    gap: var(--space-lg);
 }
 
-.cart-details {
+.cart-list {
     display: flex;
     flex-direction: column;
 }
@@ -1016,13 +1016,6 @@ footer {
     text-decoration: underline;
     text-underline-offset: 3px;
 }
-
-.cart-media img {
-        width: 100px;
-        aspect-ratio: 1/1;
-        object-fit: cover;
-        object-position: top; /* This focuses on the top of the image when a square c12rop. Consider for desktop variant as well? */
-    }
 
 .continue-shopping:hover,
 .continue-shopping:focus {
@@ -1046,14 +1039,13 @@ footer {
 
     .cart-layout {
         display: grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1fr; /* Cart Details 2/3, Summary 1/3 */
     }
 
-    .cart-media img {
-        width: 100px; /* Thumbnail size. Change to more flexible size and add a minimum cap? */
-        aspect-ratio: 3/4;
-        object-fit: cover;
-    }
+    .cart-list {
+    display: flex;
+    flex-direction: column;
+}
 }
 
 

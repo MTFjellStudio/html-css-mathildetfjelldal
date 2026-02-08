@@ -1045,7 +1045,7 @@ footer {
     .cart-list {
     display: flex;
     flex-direction: column;
-}
+    }
 }
 
 
@@ -1077,7 +1077,6 @@ footer {
     text-align: center;
 }
 
-/* --- THE ACCORDION STEPS --- */
 .checkout-step {
     border-bottom: 1px solid var(--color-border);
     margin-bottom: var(--space-md);
@@ -1093,7 +1092,6 @@ footer {
     color: var(--color-text-dark);
 }
 
-/* Hide default marker */
 .checkout-step summary::-webkit-details-marker { display: none; }
 
 .checkout-step h3 {
@@ -1104,6 +1102,15 @@ footer {
 .checkout-step[open] summary {
     border-bottom: 1px solid var(--color-border);
     margin-bottom: var(--space-md);
+}
+
+.checkout-step .radio-option {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-sm);
+    font-weight: var(--font-weight-bold);
 }
 
 .step-content {
@@ -1129,7 +1136,7 @@ input {
 
 /* --- RIGHT COLUMN: SUMMARY --- */
 .summary-card {
-    background-color: var(--color-white); /* Light grey bg */
+    background-color: var(--color-bkg-boxes);
     padding: var(--space-md);
     border: 1px solid var(--color-border);
 }
@@ -1190,7 +1197,7 @@ input {
         align-items: start; /* Prevents summary from stretching */
     }
 
-    /* Make the Order Summary Sticky */
+    /* Makes the Order Summary Sticky */
     .checkout-summary {
         position: sticky;
         top: 20px; /* Stays 20px from top of screen while scrolling */

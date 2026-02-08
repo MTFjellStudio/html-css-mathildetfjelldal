@@ -179,6 +179,20 @@ header {
     color: var(--color-secondary-accent);
 }
 
+.icon-link .cart-link {
+    position: relative;
+}
+
+.cart-badge {
+    position: relative;
+    top: -16px;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-error);
+    border-radius: 50%;
+}
+
 @media (min-width: 900px) {
     .header-inner {
         padding: var(--space-lg) var(--margin-page);
@@ -438,9 +452,9 @@ details[open] summary i {
         /* DESKTOP LAYOUT: CSS Grid Stacking. This is to make the text and button stay on top of the image in desktop view.*/
         display: grid;
         /* create 1 single cell */
-        grid-template-columns: 1fr; /*(1 Fraction): Creating one single column that stretches to fill the whole width.*/
+        grid-template-columns: 1fr;
         grid-template-rows: 600px; /* Fixed height for desktop. One single row that is exactly 600 pixels tall. */
-        overflow: hidden; /* Crop anything spilling out */
+        overflow: hidden; /* Crops anything spilling out */
     }
 
     /* --- THE IMAGE (Fills the whole grid) --- */
@@ -454,11 +468,7 @@ details[open] summary i {
         display: none; /* Hide price on desktop */
     }
 
-    /* --- THE TEXT (Overlays the grid) 
-    This tells both the Image and the Text to "Go to Column 1 and Row 1."
-    Since the Image goes there...
-    And the Text goes there...
-    They stack on top of each other. --- */
+    /* --- THE TEXT (Overlays the grid) */
     .hero-content {
         grid-column: 1 / -1;
         grid-row: 1 / -1;
@@ -1265,13 +1275,35 @@ input {
     margin-bottom: var(--space-3xl);
 }
 
-/* 
-   REUSING .category-grid 
-   Your existing layout.css [4] already sets this to 3 columns 
-   on desktop and 1 column on mobile. 
-   We just need to ensure it takes full width here.
-*/
+/* Category Grid on Success Page - Centered with no slogan */
 .success-container .category-grid {
     width: 100%;
     justify-content: center;
+}
+
+ /* ========================================
+   ABOUT PAGE LAYOUT
+   ======================================== */
+
+.about-us {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: var(--space-3xl) var(--margin-page);
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-text {
+    gap: var(--space-md);
+}
+
+.about-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 0px;
+    height: auto;
 }
